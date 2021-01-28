@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SourceFileCollection xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<SourceFileCollection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Profile>Reach</Profile>
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/MonoGame Projects/Windows/GGJ_2021/GGJ_2021/GGJ_2021/Content/Font.spritefont</File>
+    <File>C:/Users/Abdulrahman/Documents/jams/GGJ_2021/GGJ_2021/Content/2k_earth_daymap.jpg</File>
+    <File>C:/Users/Abdulrahman/Documents/jams/GGJ_2021/GGJ_2021/Content/Font.spritefont</File>
+    <File>C:/Users/Abdulrahman/Documents/jams/GGJ_2021/GGJ_2021/Content/Screen.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
   </DestFiles>
 </SourceFileCollection>

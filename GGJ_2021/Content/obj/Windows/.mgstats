@@ -1,2 +1,4 @@
 Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
-"C:/MonoGame Projects/Windows/GGJ_2021/GGJ_2021/GGJ_2021/Content/Font.spritefont","C:/MonoGame Projects/Windows/GGJ_2021/GGJ_2021/GGJ_2021/Content/bin/Windows/Font.xnb","FontDescriptionProcessor","SpriteFontContent",2008,136209,0.5186705
+"C:/Users/Abdulrahman/Documents/jams/GGJ_2021/GGJ_2021/Content/2k_earth_daymap.jpg","C:/Users/Abdulrahman/Documents/jams/GGJ_2021/GGJ_2021/Content/bin/Windows/2k_earth_daymap.xnb","TextureProcessor","Texture2DContent",463087,8388693,0.5992192
+"C:/Users/Abdulrahman/Documents/jams/GGJ_2021/GGJ_2021/Content/Font.spritefont","C:/Users/Abdulrahman/Documents/jams/GGJ_2021/GGJ_2021/Content/bin/Windows/Font.xnb","FontDescriptionProcessor","SpriteFontContent",2013,136226,0.2634088
+"C:/Users/Abdulrahman/Documents/jams/GGJ_2021/GGJ_2021/Content/Screen.png","C:/Users/Abdulrahman/Documents/jams/GGJ_2021/GGJ_2021/Content/bin/Windows/Screen.xnb","TextureProcessor","Texture2DContent",7163,4665685,0.3193878
