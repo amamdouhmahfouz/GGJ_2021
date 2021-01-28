@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <SourceFile>C:/Users/Abdulrahman/Documents/jams/GGJ_2021/GGJ_2021/Content/2k_earth_daymap.jpg</SourceFile>
-  <SourceTime>2021-01-03T12:12:00.9491984+02:00</SourceTime>
+  <SourceTime>2021-01-29T01:08:59.4471934+02:00</SourceTime>
   <DestFile>C:/Users/Abdulrahman/Documents/jams/GGJ_2021/GGJ_2021/Content/bin/Windows/Content/2k_earth_daymap.xnb</DestFile>
-  <DestTime>2021-01-28T16:46:23.3403769+02:00</DestTime>
+  <DestTime>2021-01-29T01:09:53.9038986+02:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2018-12-08T18:35:54+02:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
