@@ -1,2 +1,4 @@
 Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
 "C:/MonoGame Projects/Windows/GGJ_2021/GGJ_2021/GGJ_2021/Content/Font.spritefont","C:/MonoGame Projects/Windows/GGJ_2021/GGJ_2021/GGJ_2021/Content/bin/Windows/Font.xnb","FontDescriptionProcessor","SpriteFontContent",2008,136209,0.5186705
+"C:/MonoGame Projects/Windows/GGJ_2021/GGJ_2021/GGJ_2021/Content/Mamdouh.png","C:/MonoGame Projects/Windows/GGJ_2021/GGJ_2021/GGJ_2021/Content/bin/Windows/Mamdouh.xnb","TextureProcessor","Texture2DContent",1761,65621,0.3490368
+"C:/MonoGame Projects/Windows/GGJ_2021/GGJ_2021/GGJ_2021/Content/Oss.png","C:/MonoGame Projects/Windows/GGJ_2021/GGJ_2021/GGJ_2021/Content/bin/Windows/Oss.xnb","TextureProcessor","Texture2DContent",2147,65621,0.0049564

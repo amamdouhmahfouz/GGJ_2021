@@ -73,8 +73,9 @@ namespace GGJ_2021
             SceneManager.Start();
 
             SceneManager.AddInitializer(MainScene, 0);
+            SceneManager.AddInitializer(Credits, 2);
             //////////////////////////////////////////////////////////
-            SceneManager.LoadScene(new Scene("MainScene", 0)); //Main Scene
+            SceneManager.LoadScene(new Scene("Credits", 2)); //Credits
         }
 
         private void MainScene()
@@ -85,6 +86,78 @@ namespace GGJ_2021
             SceneManager.ActiveScene.Start();
 
             //Initialization here
+        }
+
+        private void Credits()
+        {
+            // TODO: use this.Content to load your game content here
+            spriteFont = Content.Load<SpriteFont>("Font");
+
+            GameObject canvas = new GameObject();
+            canvas.Name = "Canvas";
+            canvas.AddComponent<Transform>(new Transform());
+            canvas.AddComponent<Canvas>(new Canvas(Camera));
+
+            GameObject panel = new GameObject();
+            panel.Name = "Panel";
+            panel.AddComponent<Transform>(new Transform());
+            panel.AddComponent<Panel>(new Panel("Panel"));
+
+            GameObject Credits_Text = new GameObject();
+            Credits_Text.Name = "Credits_Text";
+            Credits_Text.AddComponent<Transform>(new Transform());
+            Credits_Text.AddComponent<Text>(new Text("Credits_Text", spriteFont));
+
+            GameObject Oss_Photo = new GameObject();
+            Oss_Photo.AddComponent<Transform>(new Transform());
+            Oss_Photo.AddComponent<SpriteRenderer>(new SpriteRenderer());
+            Oss_Photo.GetComponent<SpriteRenderer>().Sprite = new Sprite(Oss_Photo.Transform);
+            Oss_Photo.GetComponent<SpriteRenderer>().Sprite.LoadTexture("Oss");
+
+            SceneManager.ActiveScene.AddGameObject(canvas);
+            SceneManager.ActiveScene.AddGameObject(panel);
+            SceneManager.ActiveScene.AddGameObject(Credits_Text);
+            SceneManager.ActiveScene.AddGameObject(Oss_Photo);
+
+            SceneManager.ActiveScene.Start();
+
+            //Initialization here
+            canvas.AddChild(panel);
+            panel.AddChild(Credits_Text);
+            panel.AddChild(Oss_Photo);
+
+            panel.GetComponent<Panel>().Color = Color.Black;
+            panel.GetComponent<Panel>().FillTheScreen();
+
+            Credits_Text.GetComponent<Text>().text = "Credits";
+            Credits_Text.GetComponent<Text>().Color = Color.White;
+            Credits_Text.Transform.Position = new Vector2(graphics.PreferredBackBufferWidth / 1.9f, graphics.PreferredBackBufferHeight * 0.1f);
+
+            GameObject Engine_Text = GameObject.Instantiate(Credits_Text);
+            panel.AddChild(Engine_Text);
+            Engine_Text.GetComponent<Text>().text = "Engine Programming\n            & Art";
+            Engine_Text.Transform.Position = new Vector2(graphics.PreferredBackBufferWidth / 3.2f, graphics.PreferredBackBufferHeight * 0.3f);
+
+            GameObject Oss = GameObject.Instantiate(Engine_Text);
+            panel.AddChild(Oss);
+            Oss.GetComponent<Text>().text = "Osama Yahya";
+            Oss.Transform.Position = new Vector2(graphics.PreferredBackBufferWidth / 3.2f, graphics.PreferredBackBufferHeight * 0.5f);
+
+            LayerUI.AddLayer("Images", 1);
+            Oss_Photo.Transform.Position = Oss.Transform.Position + new Vector2(-graphics.PreferredBackBufferWidth * 0.05f, graphics.PreferredBackBufferHeight * 0.1f);
+            Oss_Photo.Layer = LayerUI.GetLayer("Images");
+
+            GameObject Programming = GameObject.Instantiate(Engine_Text);
+            Programming.Transform.Position = Engine_Text.Transform.Position + new Vector2(graphics.PreferredBackBufferWidth * 0.4f, -graphics.PreferredBackBufferHeight * 0.03f);
+            Programming.GetComponent<Text>().text = "Co-Programmer";
+
+            GameObject Mamdouh = GameObject.Instantiate(Oss);
+            Mamdouh.Transform.Position += Vector2.UnitX * graphics.PreferredBackBufferWidth * 0.4f;
+            Mamdouh.GetComponent<Text>().text = "Abdelrahman Mamdouh";
+
+            GameObject Mamdouh_Photo = GameObject.Instantiate(Oss_Photo);
+            Mamdouh_Photo.GetComponent<SpriteRenderer>().Sprite.LoadTexture("Mamdouh");
+            Mamdouh_Photo.Transform.Position += Vector2.UnitX * graphics.PreferredBackBufferWidth * 0.42f;
         }
 
         /// <summary>
