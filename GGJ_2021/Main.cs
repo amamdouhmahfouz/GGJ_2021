@@ -75,7 +75,7 @@ namespace GGJ_2021
             SceneManager.AddInitializer(MainScene, 0);
             SceneManager.AddInitializer(Credits, 2);
             //////////////////////////////////////////////////////////
-            SceneManager.LoadScene(new Scene("Credits", 2)); //Credits
+            SceneManager.LoadScene(new Scene("MainScene", 0)); //Credits
         }
 
         private void MainScene()
@@ -84,6 +84,9 @@ namespace GGJ_2021
             spriteFont = Content.Load<SpriteFont>("Font");
 
             SceneManager.ActiveScene.Start();
+
+            Commands.DrawRectangle(new Rectangle(100, 0, 100, 50), Color.Green);
+            Commands.DrawCircle(new Vector2(500, 500), 50, Color.Red);
 
             //Initialization here
         }
@@ -192,7 +195,7 @@ namespace GGJ_2021
             //Arrow.GetComponent<PropertiesAnimator>().GetKeyFrame("Rotate360").GetFeedback(value => Arrow.Transform.Rotation = value);
             
             SceneManager.ActiveScene.Update(gameTime);
-
+            
             base.Update(gameTime);
         }
 
