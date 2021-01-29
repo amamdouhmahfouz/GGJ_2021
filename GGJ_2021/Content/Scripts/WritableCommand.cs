@@ -13,6 +13,8 @@ namespace GGJ_2021
     public class WritableCommand : GameObjectComponent
     {
 
+        public enum Shapes { Rectangle, Circle};
+
         public string textCommand;
         public SpriteFont Font;
         public Vector2 Origin;
@@ -23,8 +25,12 @@ namespace GGJ_2021
 
         private Transform transform;
         private float prevTime;
-        private string alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZD0D1D2D3D4D5D6D7D8D9";
+        private string alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZD0D1D2D3D4D5D6D7D8D9OemSemicolon";
 
+        private bool prevKeyShift = false;
+        private Vector2 shapePosition;
+        private bool threadFinished = false;
+        private Shapes Shape;
 
         public WritableCommand(SpriteFont font)
         {
@@ -53,6 +59,8 @@ namespace GGJ_2021
             if (!CustomOrigin)
                 Origin = Font.MeasureString(textCommand) * 0.5f * transform.Scale;
 
+
+            
             spriteBatch.DrawString(Font, textCommand, transform.Position, Color, MathHelper.ToRadians(transform.Rotation), Origin, transform.Scale, spriteEffects, gameObject.Layer);
         }
 
@@ -69,13 +77,53 @@ namespace GGJ_2021
             var keys = keyboardState.GetPressedKeys();
             float nowTime = (float)gameTime.TotalGameTime.TotalSeconds;
 
-            if (keys.Length > 0 && (nowTime-prevTime) >= 0.17)
+            // ============================ Drawing Shapes ===============================
+            if (threadFinished)
+            {
+                //Draw Commands
+                switch (Shape)
+                {
+                    case Shapes.Rectangle:
+                        Commands.DrawRectangle(new Rectangle((int)shapePosition.X, (int)shapePosition.Y, 100, 50), Color.Green);
+                        break;
+
+                    case Shapes.Circle:
+                        Commands.DrawCircle(new Vector2((int)shapePosition.X, (int)shapePosition.Y), 50, Color.Blue);
+                        break;
+
+                    default:
+                        break;
+                }
+
+                
+                threadFinished = false;
+                return;
+            }
+            // ===========================================================================
+
+
+            // ============================ Get input commands ===============================
+            if (keys.Length > 0 && (nowTime-prevTime) >= 0.19)
             {
                 prevTime = nowTime;
                 var keyValue = keys[0].ToString();
                 System.Console.WriteLine(keyValue);
+
+                // A check for parentheses
+                if (keyValue == "LeftShift")
+                {
+                    prevKeyShift = true;
+                    return;
+                }
+
+
                 if (keyValue == "Enter") // new line, i.e new command
                 {
+                    /*   Check if the command written is correct, else erase that line
+                     *   Split the textCommand into a list of commands
+                     */
+
+
                     // Split the whole textCommand split into separate lines
                     string[] stringSeparators = new string[] { "\n" };
                     splitCommands = textCommand.Split(stringSeparators, StringSplitOptions.None);
@@ -84,8 +132,46 @@ namespace GGJ_2021
                     textCommand += "\n";
                     System.Console.WriteLine(textCommand);
 
+                    int index = 0;
+                    // Find index of second to last '\n' 
+                    for (int i = textCommand.Length - 3; i >= 0; i--)
+                    {
+                        if (textCommand[i] == '\n')
+                        {
+                            index = i;
+                            break;
+                        }
+                    }
+
+                    if (splitCommands[splitCommands.Length - 1] == "DRAWRECTANGLE();")
+                    {
+                        Shape = Shapes.Rectangle;
+                        Threader.Invoke(SetShapePosition, 0);
+                    }
+                    else if (splitCommands[splitCommands.Length - 1] == "DRAWCIRCLE();")
+                    {
+                        Shape = Shapes.Circle;
+                        Threader.Invoke(SetShapePosition, 0);
+                    }
+                    //else if (splitCommands[splitCommands.Length - 1] == "DRAWCIRCLE();")
+                    //{
+                    //    Commands.DrawATexture
+                    //}
+                    else
+                    {
+                        if (splitCommands.Length > 1)
+                            textCommand = textCommand.Remove(index+1);
+                        else
+                            textCommand = textCommand.Remove(index);
+                        textCommand += "INVALID COMMAND! u IDIOT\n";
+                    }
+
+
                     // Check if command written by user is an actual command
-                    bool a = Array.Exists(splitCommands, element => element == "DRAWRECTANGLE");
+                    //if (Array.Exists(splitCommands, element => element == "DRAWRECTANGLE();"))
+                    //{
+                    //    Commands.DrawRectangle(new Rectangle(100, 0, 100, 50), Color.Green);
+                    //}
 
                 }
                 else if (keyValue == "Back") //delete a character
@@ -95,18 +181,70 @@ namespace GGJ_2021
 
                     string[] stringSeparators = new string[] { "\n" };
                     splitCommands = textCommand.Split(stringSeparators, StringSplitOptions.None);
+
+
                 }
 
-                else if (alphabet.Contains(keyValue))
+                else if (keyValue == "OemSemicolon")
                 {
+                    textCommand += ";";
+                }
+
+                else if (alphabet.Contains(keyValue)) //append the actual character to be drawn on screen
+                {
+
                     if (keyValue.Length == 2)
-                        textCommand += keyValue[1].ToString();
+                    {
+                        if (keyValue[1].ToString() == "9" && prevKeyShift)
+                        {
+                            textCommand += "(";
+                            prevKeyShift = false;
+                        } 
+                        else if (keyValue[1].ToString() == "0" && prevKeyShift)
+                        {
+                            textCommand += ")";
+                            prevKeyShift = false;
+                        }
+
+                        else
+                        {
+                            textCommand += keyValue[1].ToString();
+                        }
+                         
+
+                    }
                     else
+                    {
                         textCommand += keyValue.ToString();
+
+                    }
+
                 }
                 
             }
+            // ============================== End Get input Commands ==================================
+
         }
+
+
+        private void SetShapePosition()
+        {
+            /////////////////////////////////////
+            // Set position of the drawn shape 
+            // Use the mouse to get the position
+            /////////////////////////////////////
+
+            while (!(Mouse.GetState().LeftButton == ButtonState.Pressed)) { }
+
+            Vector2 Temp = Vector2.One;
+            Temp.X = Setup.graphics.PreferredBackBufferWidth;
+            Temp.Y = Setup.graphics.PreferredBackBufferHeight;
+            shapePosition =  MathCompanion.Clamp(Setup.resolutionIndependentRenderer.ScaleMouseToScreenCoordinates(Mouse.GetState().Position.ToVector2()), Vector2.Zero, Temp);
+            System.Console.WriteLine(shapePosition);
+
+            threadFinished = true;
+        }
+
 
         public override GameObjectComponent DeepCopy(GameObject Clone)
         {

@@ -119,10 +119,15 @@ namespace GGJ_2021
             CommandTxt.GetComponent<WritableCommand>().Color = Color.DarkSeaGreen;
             CommandTxt.GetComponent<WritableCommand>().CustomOrigin = true;
             //CommandTxt.GetComponent<WritableCommand>().Origin = new Vector2(200, 100);
-            CommandTxt.Transform.Position = new Vector2(900, 100);
+            CommandTxt.Transform.Position = new Vector2(200, 150);
             CommandTxt.Transform.Scale *= 0.5f;
-            Monitor.Transform.Scale = new Vector2(0.75f, 0.75f);
-            Monitor.Transform.Position = new Vector2(150,100);
+
+            Monitor.Transform.Scale = new Vector2(0.85f, 0.85f);
+            Monitor.Transform.Position = new Vector2(graphics.PreferredBackBufferWidth / 2, graphics.PreferredBackBufferHeight / 2);
+            Monitor.GetComponent<SpriteRenderer>().Sprite.Transform = Monitor.Transform;
+            Monitor.GetComponent<SpriteRenderer>().Sprite.Origin = Monitor.GetComponent<SpriteRenderer>().Sprite.SourceRectangle.Size.ToVector2()/2;
+            //Monitor.Transform.Position = new Vector2(150,100);
+            
         }
 
 
