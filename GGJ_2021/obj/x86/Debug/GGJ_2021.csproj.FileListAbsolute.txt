@@ -80,3 +80,4 @@ C:\Users\Abdulrahman\Documents\jams\newBranches\GGJ_2021\GGJ_2021\obj\x86\Debug\
 C:\Users\Abdulrahman\Documents\jams\newBranches\GGJ_2021\GGJ_2021\obj\x86\Debug\GGJ_2021.csproj.CopyComplete
 C:\Users\Abdulrahman\Documents\jams\newBranches\GGJ_2021\GGJ_2021\obj\x86\Debug\GGJ_2021.exe
 C:\Users\Abdulrahman\Documents\jams\newBranches\GGJ_2021\GGJ_2021\obj\x86\Debug\GGJ_2021.pdb
+C:\Users\Abdulrahman\Documents\jams\newBranches\GGJ_2021\GGJ_2021\bin\Windows\x86\Debug\Content\Screen2.xnb

@@ -4,11 +4,13 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/Abdulrahman/Documents/jams/GGJ_2021/GGJ_2021/Content/2k_earth_daymap.jpg</File>
-    <File>C:/Users/Abdulrahman/Documents/jams/GGJ_2021/GGJ_2021/Content/Font.spritefont</File>
-    <File>C:/Users/Abdulrahman/Documents/jams/GGJ_2021/GGJ_2021/Content/Screen.png</File>
+    <File>C:/Users/Abdulrahman/Documents/jams/newBranches/GGJ_2021/GGJ_2021/Content/2k_earth_daymap.jpg</File>
+    <File>C:/Users/Abdulrahman/Documents/jams/newBranches/GGJ_2021/GGJ_2021/Content/Font.spritefont</File>
+    <File>C:/Users/Abdulrahman/Documents/jams/newBranches/GGJ_2021/GGJ_2021/Content/Screen.png</File>
+    <File>C:/Users/Abdulrahman/Documents/jams/newBranches/GGJ_2021/GGJ_2021/Content/Screen2.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

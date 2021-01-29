@@ -13,7 +13,7 @@ namespace GGJ_2021
     public class WritableCommand : GameObjectComponent
     {
 
-        public enum Shapes { Rectangle, Circle};
+        public enum Shapes { Tile, Rectangle, Circle};
 
         public string textCommand;
         public SpriteFont Font;
@@ -25,12 +25,15 @@ namespace GGJ_2021
 
         private Transform transform;
         private float prevTime;
-        private string alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZD0D1D2D3D4D5D6D7D8D9OemSemicolon";
+        private string alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZD0D1D2D3D4D5D6D7D8D9OemSemicolonOemPlus";
 
         private bool prevKeyShift = false;
         private Vector2 shapePosition;
+        private Color shapeColor = Color.Green;
         private bool threadFinished = false;
         private Shapes Shape;
+        private bool threadInProgress = false;
+        
 
         public WritableCommand(SpriteFont font)
         {
@@ -83,12 +86,12 @@ namespace GGJ_2021
                 //Draw Commands
                 switch (Shape)
                 {
-                    case Shapes.Rectangle:
-                        Commands.DrawRectangle(new Rectangle((int)shapePosition.X, (int)shapePosition.Y, 100, 50), Color.Green);
+                    case Shapes.Tile:
+                        Commands.DrawRectangle(new Rectangle((int)shapePosition.X, (int)shapePosition.Y, 26, 26), shapeColor);
                         break;
 
                     case Shapes.Circle:
-                        Commands.DrawCircle(new Vector2((int)shapePosition.X, (int)shapePosition.Y), 50, Color.Blue);
+                        Commands.DrawCircle(new Vector2((int)shapePosition.X, (int)shapePosition.Y), 15, shapeColor);
                         break;
 
                     default:
@@ -97,13 +100,14 @@ namespace GGJ_2021
 
                 
                 threadFinished = false;
+                threadInProgress = false;
                 return;
             }
             // ===========================================================================
 
 
             // ============================ Get input commands ===============================
-            if (keys.Length > 0 && (nowTime-prevTime) >= 0.19)
+            if (!threadInProgress && keys.Length > 0 && (nowTime-prevTime) >= 0.19)
             {
                 prevTime = nowTime;
                 var keyValue = keys[0].ToString();
@@ -132,6 +136,7 @@ namespace GGJ_2021
                     textCommand += "\n";
                     System.Console.WriteLine(textCommand);
 
+
                     int index = 0;
                     // Find index of second to last '\n' 
                     for (int i = textCommand.Length - 3; i >= 0; i--)
@@ -143,20 +148,67 @@ namespace GGJ_2021
                         }
                     }
 
-                    if (splitCommands[splitCommands.Length - 1] == "DRAWRECTANGLE();")
+                    if (splitCommands[splitCommands.Length - 1] == "DRAWTILE();")
                     {
-                        Shape = Shapes.Rectangle;
+                        Shape = Shapes.Tile;
+                        threadInProgress = true;
                         Threader.Invoke(SetShapePosition, 0);
                     }
                     else if (splitCommands[splitCommands.Length - 1] == "DRAWCIRCLE();")
                     {
                         Shape = Shapes.Circle;
+                        threadInProgress = true;
                         Threader.Invoke(SetShapePosition, 0);
                     }
-                    //else if (splitCommands[splitCommands.Length - 1] == "DRAWCIRCLE();")
+                    //else if (splitCommands[splitCommands.Length - 1] == "DRAWTEXTURE();")
                     //{
                     //    Commands.DrawATexture
                     //}
+                    else if (splitCommands[splitCommands.Length - 1].Substring(0, splitCommands[splitCommands.Length - 1].Length-2) == "COLOR="
+                        && splitCommands[splitCommands.Length - 1].Substring(splitCommands[splitCommands.Length - 1].Length - 1) == ";"
+                        && splitCommands[splitCommands.Length - 1].Length == 8)
+                    {
+                        
+                       
+                        switch(splitCommands[splitCommands.Length - 1].Substring(splitCommands[splitCommands.Length - 1].Length - 2)[0])
+                        {
+                            case '0':
+                                shapeColor = Color.Orange;
+                                break;
+                            case '1':
+                                shapeColor = Color.White;
+                                break;
+                            case '2':
+                                shapeColor = Color.Green;
+                                break;
+                            case '3':
+                                shapeColor = Color.Blue;
+                                break;
+                            case '4':
+                                shapeColor = Color.Red;
+                                break;
+                            case '5':
+                                shapeColor = Color.Yellow;
+                                break;
+                            case '6':
+                                shapeColor = Color.Cyan;
+                                break;
+                            case '7':
+                                shapeColor = Color.DarkSeaGreen;
+                                break;
+                            case '8':
+                                shapeColor = Color.DarkOliveGreen;
+                                break;
+                            case '9':
+                                shapeColor = Color.Aquamarine;
+                                break;
+
+                            default:
+                                break;
+
+                        }
+
+                    }
                     else
                     {
                         if (splitCommands.Length > 1)
@@ -189,7 +241,10 @@ namespace GGJ_2021
                 {
                     textCommand += ";";
                 }
-
+                else if (keyValue == "OemPlus")
+                {
+                    textCommand += "=";
+                }
                 else if (alphabet.Contains(keyValue)) //append the actual character to be drawn on screen
                 {
 
@@ -233,6 +288,7 @@ namespace GGJ_2021
             // Set position of the drawn shape 
             // Use the mouse to get the position
             /////////////////////////////////////
+
 
             while (!(Mouse.GetState().LeftButton == ButtonState.Pressed)) { }
 

@@ -100,7 +100,7 @@ namespace GGJ_2021
             Monitor.AddComponent<Transform>(new Transform());
             Monitor.AddComponent<SpriteRenderer>(new SpriteRenderer());
             Monitor.GetComponent<SpriteRenderer>().Sprite = new Sprite(Monitor.Transform);
-            Monitor.GetComponent<SpriteRenderer>().Sprite.LoadTexture("Screen");
+            Monitor.GetComponent<SpriteRenderer>().Sprite.LoadTexture("Screen2");
             //Monitor.GetComponent<SpriteRenderer>().Sprite.DynamicScaledRect();
 
 
@@ -119,7 +119,7 @@ namespace GGJ_2021
             CommandTxt.GetComponent<WritableCommand>().Color = Color.DarkSeaGreen;
             CommandTxt.GetComponent<WritableCommand>().CustomOrigin = true;
             //CommandTxt.GetComponent<WritableCommand>().Origin = new Vector2(200, 100);
-            CommandTxt.Transform.Position = new Vector2(200, 150);
+            CommandTxt.Transform.Position = new Vector2(150, 150);
             CommandTxt.Transform.Scale *= 0.5f;
 
             Monitor.Transform.Scale = new Vector2(0.85f, 0.85f);
