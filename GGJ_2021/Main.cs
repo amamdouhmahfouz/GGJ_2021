@@ -83,12 +83,28 @@ namespace GGJ_2021
             // TODO: use this.Content to load your game content here
             spriteFont = Content.Load<SpriteFont>("Font");
 
+            GameObject Screen = new GameObject();
+            Screen.AddComponent<Transform>(new Transform());
+            Screen.AddComponent<SpriteRenderer>(new SpriteRenderer());
+            Screen.GetComponent<SpriteRenderer>().Sprite = new Sprite(Screen.Transform);
+            Screen.GetComponent<SpriteRenderer>().Sprite.LoadTexture("Screen");
+
+            GameObject Grid = new GameObject();
+            Grid.AddComponent<DrawGrid>(new DrawGrid(new Vector2(graphics.PreferredBackBufferWidth * 0.43f, graphics.PreferredBackBufferHeight * 0.15f), 15, 15, 50));
+            Grid.AddComponent<OutlineGrid>(new OutlineGrid());
+
+            SceneManager.ActiveScene.AddGameObject(Screen);
+            SceneManager.ActiveScene.AddGameObject(Grid);
+
             SceneManager.ActiveScene.Start();
 
-            Commands.DrawRectangle(new Rectangle(100, 0, 100, 50), Color.Green);
-            Commands.DrawCircle(new Vector2(500, 500), 50, Color.Red);
-
             //Initialization here
+            Screen.Transform.Scale = 0.95f * Vector2.One;
+            Screen.Layer = 1;
+
+            //Errors.WindowSpam();
+            //Grid.GetComponent<DrawGrid>().Width = 100;
+            //Grid.GetComponent<DrawGrid>().Height = 100;
         }
 
         private void Credits()
@@ -193,7 +209,12 @@ namespace GGJ_2021
 
             //passing a property as a refrence using delegates
             //Arrow.GetComponent<PropertiesAnimator>().GetKeyFrame("Rotate360").GetFeedback(value => Arrow.Transform.Rotation = value);
-            
+
+            if (Keyboard.GetState().IsKeyDown(Keys.Z))
+                Camera.Zoom += (float)gameTime.ElapsedGameTime.TotalSeconds;
+            else if (Keyboard.GetState().IsKeyDown(Keys.X))
+                Camera.Zoom -= (float)gameTime.ElapsedGameTime.TotalSeconds;
+
             SceneManager.ActiveScene.Update(gameTime);
             
             base.Update(gameTime);

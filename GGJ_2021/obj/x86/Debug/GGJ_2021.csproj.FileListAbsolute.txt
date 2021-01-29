@@ -28,3 +28,9 @@ C:\MonoGame Projects\Windows\GGJ_2021\GGJ_2021\GGJ_2021\obj\x86\Debug\GGJ_2021.e
 C:\MonoGame Projects\Windows\GGJ_2021\GGJ_2021\GGJ_2021\obj\x86\Debug\GGJ_2021.pdb
 C:\MonoGame Projects\Windows\GGJ_2021\GGJ_2021\GGJ_2021\bin\Windows\x86\Debug\Content\Mamdouh.xnb
 C:\MonoGame Projects\Windows\GGJ_2021\GGJ_2021\GGJ_2021\bin\Windows\x86\Debug\Content\Oss.xnb
+C:\MonoGame Projects\Windows\GGJ_2021\GGJ_2021\GGJ_2021\bin\Windows\x86\Debug\Content\PopUpWindow.xnb
+C:\MonoGame Projects\Windows\GGJ_2021\GGJ_2021\GGJ_2021\bin\Windows\x86\Debug\Content\Popup_Sound.xnb
+C:\MonoGame Projects\Windows\GGJ_2021\GGJ_2021\GGJ_2021\bin\Windows\x86\Debug\Content\DecisionMaker_Hatem.xnb
+C:\MonoGame Projects\Windows\GGJ_2021\GGJ_2021\GGJ_2021\bin\Windows\x86\Debug\Content\EntryScene..xnb
+C:\MonoGame Projects\Windows\GGJ_2021\GGJ_2021\GGJ_2021\bin\Windows\x86\Debug\Content\EntryScene_Decision1..xnb
+C:\MonoGame Projects\Windows\GGJ_2021\GGJ_2021\GGJ_2021\bin\Windows\x86\Debug\Content\Screen.xnb

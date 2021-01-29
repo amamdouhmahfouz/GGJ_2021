@@ -9,12 +9,14 @@ namespace GGJ_2021
         public static void DrawRectangle(Rectangle Destination, Color color)
         {
             GameObject Rectangle = new GameObject();
+            Rectangle.Tag = "Command";
             Rectangle.AddComponent<Transform>(new Transform());
             Rectangle.AddComponent<SpriteRenderer>(new SpriteRenderer());
             Rectangle.GetComponent<SpriteRenderer>().Sprite = new Sprite(Rectangle.Transform);
             Rectangle.GetComponent<SpriteRenderer>().Sprite.Texture = HitBoxDebuger.RectTexture(color);
 
             Rectangle.Start();
+            Rectangle.GetComponent<SpriteRenderer>().Sprite.Transform = Rectangle.Transform;
 
             Rectangle.Transform.Position = Destination.Location.ToVector2();
             Rectangle.Transform.Scale = Destination.Size.ToVector2();
@@ -25,12 +27,14 @@ namespace GGJ_2021
         public static void DrawCircle(Vector2 Position, int Radius, Color color)
         {
             GameObject Circle = new GameObject();
+            Circle.Tag = "Command";
             Circle.AddComponent<Transform>(new Transform());
             Circle.AddComponent<SpriteRenderer>(new SpriteRenderer());
             Circle.GetComponent<SpriteRenderer>().Sprite = new Sprite(Circle.Transform);
             Circle.GetComponent<SpriteRenderer>().Sprite.Texture = HitBoxDebuger.CreateCircleTexture(Radius, color);
 
             Circle.Start();
+            Circle.GetComponent<SpriteRenderer>().Sprite.Transform = Circle.Transform;
 
             Circle.Transform.Position = Position;
 
@@ -61,5 +65,7 @@ namespace GGJ_2021
 
             return true;
         }
+
+
     }
 }
