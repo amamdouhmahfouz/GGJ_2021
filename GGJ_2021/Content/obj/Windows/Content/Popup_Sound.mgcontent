@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/MonoGame Projects/Windows/GGJ_2021/GGJ_2021/GGJ_2021/Content/erro (online-audio-converter.com).wav</SourceFile>
-  <SourceTime>2021-01-29T01:45:09.2521957+02:00</SourceTime>
-  <DestFile>C:/MonoGame Projects/Windows/GGJ_2021/GGJ_2021/GGJ_2021/Content/bin/Windows/Content/Popup_Sound.xnb</DestFile>
-  <DestTime>2021-01-29T01:47:01.4929215+02:00</DestTime>
+  <SourceFile>C:/Users/Abdulrahman/Documents/jams/newBranches/main/GGJ_2021/GGJ_2021/Content/erro (online-audio-converter.com).wav</SourceFile>
+  <SourceTime>2021-01-29T21:53:26.0274665+02:00</SourceTime>
+  <DestFile>C:/Users/Abdulrahman/Documents/jams/newBranches/main/GGJ_2021/GGJ_2021/Content/bin/Windows/Content/Popup_Sound.xnb</DestFile>
+  <DestTime>2021-01-29T22:01:02.754399+02:00</DestTime>
   <Importer>WavImporter</Importer>
   <ImporterTime>2018-12-08T18:35:54+02:00</ImporterTime>
   <Processor>SoundEffectProcessor</Processor>

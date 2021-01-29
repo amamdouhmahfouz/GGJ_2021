@@ -89,12 +89,21 @@ namespace GGJ_2021
             Screen.GetComponent<SpriteRenderer>().Sprite = new Sprite(Screen.Transform);
             Screen.GetComponent<SpriteRenderer>().Sprite.LoadTexture("Screen");
 
-            GameObject Grid = new GameObject();
-            Grid.AddComponent<DrawGrid>(new DrawGrid(new Vector2(graphics.PreferredBackBufferWidth * 0.43f, graphics.PreferredBackBufferHeight * 0.15f), 15, 15, 50));
-            Grid.AddComponent<OutlineGrid>(new OutlineGrid());
+            //GameObject Grid = new GameObject();
+            //Grid.AddComponent<DrawGrid>(new DrawGrid(new Vector2(graphics.PreferredBackBufferWidth * 0.43f, graphics.PreferredBackBufferHeight * 0.15f), 15, 15, 50));
+            //Grid.AddComponent<OutlineGrid>(new OutlineGrid());
+
+            GameObject CommandTxt = new GameObject();
+            CommandTxt.AddComponent<Transform>(new Transform());
+            CommandTxt.AddComponent<WritableCommand>(new WritableCommand(spriteFont));
+            CommandTxt.AddComponent<DrawGrid>(new DrawGrid(new Vector2(graphics.PreferredBackBufferWidth * 0.43f, graphics.PreferredBackBufferHeight * 0.15f), 15, 15, 50));
+            CommandTxt.AddComponent<OutlineGrid>(new OutlineGrid());
+            CommandTxt.Name = "CommandTxt";
+
 
             SceneManager.ActiveScene.AddGameObject(Screen);
-            SceneManager.ActiveScene.AddGameObject(Grid);
+            //SceneManager.ActiveScene.AddGameObject(Grid);
+            SceneManager.ActiveScene.AddGameObject(CommandTxt);
 
             SceneManager.ActiveScene.Start();
 
@@ -102,6 +111,12 @@ namespace GGJ_2021
             Screen.Transform.Scale = 0.95f * Vector2.One;
             Screen.Layer = 1;
 
+            CommandTxt.GetComponent<WritableCommand>().Color = Color.DarkSeaGreen;
+            CommandTxt.GetComponent<WritableCommand>().CustomOrigin = true;
+            CommandTxt.Transform.Position = new Vector2(80, 110);
+            CommandTxt.Transform.Scale *= 0.5f;
+            CommandTxt.GetComponent<DrawGrid>().Enabled = false;
+            CommandTxt.GetComponent<OutlineGrid>().Enabled = false;
             //Errors.WindowSpam();
             //Grid.GetComponent<DrawGrid>().Width = 100;
             //Grid.GetComponent<DrawGrid>().Height = 100;
@@ -132,6 +147,7 @@ namespace GGJ_2021
             Oss_Photo.AddComponent<SpriteRenderer>(new SpriteRenderer());
             Oss_Photo.GetComponent<SpriteRenderer>().Sprite = new Sprite(Oss_Photo.Transform);
             Oss_Photo.GetComponent<SpriteRenderer>().Sprite.LoadTexture("Oss");
+
 
             SceneManager.ActiveScene.AddGameObject(canvas);
             SceneManager.ActiveScene.AddGameObject(panel);
@@ -210,12 +226,15 @@ namespace GGJ_2021
             //passing a property as a refrence using delegates
             //Arrow.GetComponent<PropertiesAnimator>().GetKeyFrame("Rotate360").GetFeedback(value => Arrow.Transform.Rotation = value);
 
-            if (Keyboard.GetState().IsKeyDown(Keys.Z))
-                Camera.Zoom += (float)gameTime.ElapsedGameTime.TotalSeconds;
-            else if (Keyboard.GetState().IsKeyDown(Keys.X))
-                Camera.Zoom -= (float)gameTime.ElapsedGameTime.TotalSeconds;
+            //if (Keyboard.GetState().IsKeyDown(Keys.Z))
+            //    Camera.Zoom += (float)gameTime.ElapsedGameTime.TotalSeconds;
+            //else if (Keyboard.GetState().IsKeyDown(Keys.X))
+            //    Camera.Zoom -= (float)gameTime.ElapsedGameTime.TotalSeconds;
+            
+            //if (Input.GetKeyDown(Keys.O))
+            //    SceneManager.ActiveScene.FindGameObjectWithName("CommandTxt").Active = !SceneManager.ActiveScene.FindGameObjectWithName("CommandTxt").Active;
 
-            SceneManager.ActiveScene.Update(gameTime);
+                SceneManager.ActiveScene.Update(gameTime);
             
             base.Update(gameTime);
         }

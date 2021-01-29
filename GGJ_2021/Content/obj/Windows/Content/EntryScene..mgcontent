@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/MonoGame Projects/Windows/GGJ_2021/GGJ_2021/GGJ_2021/Content/EntryScene..png</SourceFile>
-  <SourceTime>2021-01-29T00:18:08.6096386+02:00</SourceTime>
-  <DestFile>C:/MonoGame Projects/Windows/GGJ_2021/GGJ_2021/GGJ_2021/Content/bin/Windows/Content/EntryScene..xnb</DestFile>
-  <DestTime>2021-01-29T17:16:04.296671+02:00</DestTime>
+  <SourceFile>C:/Users/Abdulrahman/Documents/jams/newBranches/main/GGJ_2021/GGJ_2021/Content/EntryScene..png</SourceFile>
+  <SourceTime>2021-01-29T21:53:25.7906001+02:00</SourceTime>
+  <DestFile>C:/Users/Abdulrahman/Documents/jams/newBranches/main/GGJ_2021/GGJ_2021/Content/bin/Windows/Content/EntryScene..xnb</DestFile>
+  <DestTime>2021-01-29T22:01:02.4673824+02:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2018-12-08T18:35:54+02:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

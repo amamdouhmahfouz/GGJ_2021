@@ -12,6 +12,9 @@ namespace GGJ_2021
         private int Columns = 14;
         private int Size = 50;
 
+        public Shapes Shape = Shapes.Tile;
+        public Color Color = Color.Red;
+
         public override void Start()
         {
             Rects = new Rectangle[Rows * Columns];
@@ -53,8 +56,10 @@ namespace GGJ_2021
                         if (BREAK)
                             break;
 
-                        Commands.DrawRectangle(R, Color.Red);
-                        //Commands.DrawCircle(R.Location.ToVector2(), R.Size.X/2, Color.Red);
+                        if (Shape == Shapes.Tile)
+                            Commands.DrawRectangle(R, Color);
+                        else if (Shape == Shapes.Circle)
+                            Commands.DrawCircle(R.Location.ToVector2(), R.Size.X/2, Color);
                     }
                 }
                 else if(Input.GetMouseClick(MouseButtons.RightClick))

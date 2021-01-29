@@ -46,6 +46,7 @@
     <Compile Include="Content\Scripts\DrawGrid.cs" />
     <Compile Include="Content\Scripts\Errors.cs" />
     <Compile Include="Content\Scripts\OutlineGrid.cs" />
+    <Compile Include="Content\Scripts\WritableCommand.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

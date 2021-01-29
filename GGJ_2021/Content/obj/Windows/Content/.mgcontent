@@ -4,15 +4,15 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/MonoGame Projects/Windows/GGJ_2021/GGJ_2021/GGJ_2021/Content/DecisionMaker_Hatem.png</File>
-    <File>C:/MonoGame Projects/Windows/GGJ_2021/GGJ_2021/GGJ_2021/Content/EntryScene..png</File>
-    <File>C:/MonoGame Projects/Windows/GGJ_2021/GGJ_2021/GGJ_2021/Content/EntryScene_Decision1..png</File>
-    <File>C:/MonoGame Projects/Windows/GGJ_2021/GGJ_2021/GGJ_2021/Content/erro (online-audio-converter.com).wav</File>
-    <File>C:/MonoGame Projects/Windows/GGJ_2021/GGJ_2021/GGJ_2021/Content/Font.spritefont</File>
-    <File>C:/MonoGame Projects/Windows/GGJ_2021/GGJ_2021/GGJ_2021/Content/Mamdouh.png</File>
-    <File>C:/MonoGame Projects/Windows/GGJ_2021/GGJ_2021/GGJ_2021/Content/Oss.png</File>
-    <File>C:/MonoGame Projects/Windows/GGJ_2021/GGJ_2021/GGJ_2021/Content/PopUpWindow.png</File>
-    <File>C:/MonoGame Projects/Windows/GGJ_2021/GGJ_2021/GGJ_2021/Content/Screen.png</File>
+    <File>C:/Users/Abdulrahman/Documents/jams/newBranches/main/GGJ_2021/GGJ_2021/Content/DecisionMaker_Hatem.png</File>
+    <File>C:/Users/Abdulrahman/Documents/jams/newBranches/main/GGJ_2021/GGJ_2021/Content/EntryScene..png</File>
+    <File>C:/Users/Abdulrahman/Documents/jams/newBranches/main/GGJ_2021/GGJ_2021/Content/EntryScene_Decision1..png</File>
+    <File>C:/Users/Abdulrahman/Documents/jams/newBranches/main/GGJ_2021/GGJ_2021/Content/erro (online-audio-converter.com).wav</File>
+    <File>C:/Users/Abdulrahman/Documents/jams/newBranches/main/GGJ_2021/GGJ_2021/Content/Font.spritefont</File>
+    <File>C:/Users/Abdulrahman/Documents/jams/newBranches/main/GGJ_2021/GGJ_2021/Content/Mamdouh.png</File>
+    <File>C:/Users/Abdulrahman/Documents/jams/newBranches/main/GGJ_2021/GGJ_2021/Content/Oss.png</File>
+    <File>C:/Users/Abdulrahman/Documents/jams/newBranches/main/GGJ_2021/GGJ_2021/Content/PopUpWindow.png</File>
+    <File>C:/Users/Abdulrahman/Documents/jams/newBranches/main/GGJ_2021/GGJ_2021/Content/Screen.png</File>
   </SourceFiles>
   <DestFiles>
     <File xsi:nil="true" />
