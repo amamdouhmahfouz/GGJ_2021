@@ -15,8 +15,6 @@ namespace GGJ_2021
     public class WritableCommand : GameObjectComponent
     {
 
-
-
         public string textCommand;
         public SpriteFont Font;
         public Vector2 Origin;

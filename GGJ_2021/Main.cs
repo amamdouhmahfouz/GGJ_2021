@@ -131,6 +131,11 @@ namespace GGJ_2021
             DocumentationTxtTitle.AddComponent<Transform>(new Transform());
             DocumentationTxtTitle.AddComponent<Text>(new Text("DocumentationTxtTitle", spriteFont));
 
+            GameObject F1_help = new GameObject();
+            F1_help.Name = "F1_help";
+            F1_help.AddComponent<Transform>(new Transform());
+            F1_help.AddComponent<Text>(new Text("F1_help", spriteFont));
+
             SceneManager.ActiveScene.AddGameObject(Screen);
             //SceneManager.ActiveScene.AddGameObject(Grid);
             SceneManager.ActiveScene.AddGameObject(CommandTxt);
@@ -139,6 +144,7 @@ namespace GGJ_2021
             SceneManager.ActiveScene.AddGameObject(DocumentationTxt);
             SceneManager.ActiveScene.AddGameObject(DocumentationTxtTitle);
             SceneManager.ActiveScene.AddGameObject(DocumentationTxtRight);
+            SceneManager.ActiveScene.AddGameObject(F1_help);
 
             SceneManager.ActiveScene.Start();
 
@@ -152,7 +158,8 @@ namespace GGJ_2021
 
             CommandTxt.GetComponent<WritableCommand>().Color = Color.DarkSeaGreen;
             CommandTxt.GetComponent<WritableCommand>().CustomOrigin = true;
-            CommandTxt.Transform.Position = new Vector2(80, 110);
+            //CommandTxt.Transform.Position = new Vector2(80, 110);
+            CommandTxt.Transform.Position = new Vector2(80, 120);
             CommandTxt.Transform.Scale *= 0.5f;
             CommandTxt.GetComponent<DrawGrid>().Enabled = false;
             CommandTxt.GetComponent<OutlineGrid>().Enabled = false;
@@ -220,12 +227,15 @@ namespace GGJ_2021
             DocumentationTxtTitle.Layer = 0;
             DocumentationTxt.Layer = 0;
             DocumentationTxtRight.Layer = 0;
-            //DocumentationTxt.Active = false;
-            //DocumentationTxtTitle.Active = false;
-            //DocumentationTxtRight.Active = false;
+
+            F1_help.Layer = 0.004f;
+            F1_help.GetComponent<Text>().Color = Color.Beige;
+            F1_help.GetComponent<Text>().text = "                 Press F1 for documentation\n";
+            F1_help.GetComponent<Transform>().Position = new Vector2(150f, 103f);
+            F1_help.GetComponent<Transform>().Scale *= 0.45f;
 
             //SceneManager.ActiveScene.SortGameObjectsWithLayer();
-            
+
             //Errors.WindowSpam();
             //Grid.GetComponent<DrawGrid>().Width = 100;
             //Grid.GetComponent<DrawGrid>().Height = 100;
