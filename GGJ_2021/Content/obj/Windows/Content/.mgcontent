@@ -12,6 +12,7 @@
     <File>C:/Users/Abdulrahman/Documents/jams/newBranches/main/GGJ_2021/GGJ_2021/Content/Mamdouh.png</File>
     <File>C:/Users/Abdulrahman/Documents/jams/newBranches/main/GGJ_2021/GGJ_2021/Content/Oss.png</File>
     <File>C:/Users/Abdulrahman/Documents/jams/newBranches/main/GGJ_2021/GGJ_2021/Content/PopUpWindow.png</File>
+    <File>C:/Users/Abdulrahman/Documents/jams/newBranches/main/GGJ_2021/GGJ_2021/Content/Restart_Screen.png</File>
     <File>C:/Users/Abdulrahman/Documents/jams/newBranches/main/GGJ_2021/GGJ_2021/Content/Screen.png</File>
   </SourceFiles>
   <DestFiles>
@@ -19,6 +20,7 @@
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File>Popup_Sound.wav</File>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

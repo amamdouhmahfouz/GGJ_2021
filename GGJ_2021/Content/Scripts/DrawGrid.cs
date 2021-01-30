@@ -46,10 +46,10 @@ namespace GGJ_2021
             Color color = Color.White * 0.4f;
 
             for (int i = 0; i < Height; i++)
-                HitBoxDebuger.DrawLine(Rects[i], color, -90, 0, Vector2.Zero);
+                HitBoxDebuger.DrawLine(Rects[i], color, -90, gameObject.Layer, Vector2.Zero);
 
             for (int i = 0; i < Width; i++)
-                HitBoxDebuger.DrawLine(Rects2[i], color, 0, 0, Vector2.Zero);
+                HitBoxDebuger.DrawLine(Rects2[i], color, 0, gameObject.Layer, Vector2.Zero);
         }
     }
 }

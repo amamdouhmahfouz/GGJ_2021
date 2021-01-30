@@ -98,12 +98,21 @@ namespace GGJ_2021
             CommandTxt.AddComponent<WritableCommand>(new WritableCommand(spriteFont));
             CommandTxt.AddComponent<DrawGrid>(new DrawGrid(new Vector2(graphics.PreferredBackBufferWidth * 0.43f, graphics.PreferredBackBufferHeight * 0.15f), 15, 15, 50));
             CommandTxt.AddComponent<OutlineGrid>(new OutlineGrid());
+            CommandTxt.AddComponent<ClosePopup>(new ClosePopup());
             CommandTxt.Name = "CommandTxt";
 
+
+            GameObject BlueDeathScreen = new GameObject();
+            BlueDeathScreen.AddComponent<Transform>(new Transform());
+            BlueDeathScreen.AddComponent<SpriteRenderer>(new SpriteRenderer());
+            BlueDeathScreen.GetComponent<SpriteRenderer>().Sprite = new Sprite(BlueDeathScreen.Transform);
+            BlueDeathScreen.GetComponent<SpriteRenderer>().Sprite.LoadTexture("Restart_Screen");
+            BlueDeathScreen.Tag = "BlueDeathScreen";
 
             SceneManager.ActiveScene.AddGameObject(Screen);
             //SceneManager.ActiveScene.AddGameObject(Grid);
             SceneManager.ActiveScene.AddGameObject(CommandTxt);
+            SceneManager.ActiveScene.AddGameObject(BlueDeathScreen);
 
             SceneManager.ActiveScene.Start();
 
@@ -117,6 +126,16 @@ namespace GGJ_2021
             CommandTxt.Transform.Scale *= 0.5f;
             CommandTxt.GetComponent<DrawGrid>().Enabled = false;
             CommandTxt.GetComponent<OutlineGrid>().Enabled = false;
+            CommandTxt.GetComponent<ClosePopup>().Enabled = false;
+            CommandTxt.Layer = 0.5f;
+            
+
+            BlueDeathScreen.Layer = 0;
+            BlueDeathScreen.Transform.Scale = 0.95f * Vector2.One;
+            BlueDeathScreen.Active = false;
+
+            SceneManager.ActiveScene.SortGameObjectsWithLayer();
+            
             //Errors.WindowSpam();
             //Grid.GetComponent<DrawGrid>().Width = 100;
             //Grid.GetComponent<DrawGrid>().Height = 100;
@@ -230,11 +249,18 @@ namespace GGJ_2021
             //    Camera.Zoom += (float)gameTime.ElapsedGameTime.TotalSeconds;
             //else if (Keyboard.GetState().IsKeyDown(Keys.X))
             //    Camera.Zoom -= (float)gameTime.ElapsedGameTime.TotalSeconds;
-            
+
             //if (Input.GetKeyDown(Keys.O))
             //    SceneManager.ActiveScene.FindGameObjectWithName("CommandTxt").Active = !SceneManager.ActiveScene.FindGameObjectWithName("CommandTxt").Active;
 
-                SceneManager.ActiveScene.Update(gameTime);
+            //if (Input.GetKeyDown(Keys.O))
+            //{
+            //    SceneManager.ActiveScene.FindGameObjectWithName("CommandTxt").GetComponent<WritableCommand>().Enabled = !SceneManager.ActiveScene.FindGameObjectWithName("CommandTxt").GetComponent<WritableCommand>().Enabled;
+            //    SceneManager.ActiveScene.FindGameObjectWithName("CommandTxt").GetComponent<OutlineGrid>().Enabled = !SceneManager.ActiveScene.FindGameObjectWithName("CommandTxt").GetComponent<OutlineGrid>().Enabled;
+            //}
+    
+
+            SceneManager.ActiveScene.Update(gameTime);
             
             base.Update(gameTime);
         }

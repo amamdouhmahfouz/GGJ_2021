@@ -26,7 +26,7 @@ namespace GGJ_2021
 
             SceneManager.ActiveScene.AddGameObject(Popup);
 
-            for(int i=1; i < 30; i++)
+            for(int i=1; i < 25; i++)
             {
                 Threader.Invoke(MakeAnotherWindowSpam, (uint)i * 100);
             }

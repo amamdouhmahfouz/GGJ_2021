@@ -67,3 +67,4 @@ C:\Users\Abdulrahman\Documents\jams\newBranches\main\GGJ_2021\GGJ_2021\obj\x86\D
 C:\Users\Abdulrahman\Documents\jams\newBranches\main\GGJ_2021\GGJ_2021\obj\x86\Debug\GGJ_2021.csproj.CopyComplete
 C:\Users\Abdulrahman\Documents\jams\newBranches\main\GGJ_2021\GGJ_2021\obj\x86\Debug\GGJ_2021.exe
 C:\Users\Abdulrahman\Documents\jams\newBranches\main\GGJ_2021\GGJ_2021\obj\x86\Debug\GGJ_2021.pdb
+C:\Users\Abdulrahman\Documents\jams\newBranches\main\GGJ_2021\GGJ_2021\bin\Windows\x86\Debug\Content\Restart_Screen.xnb

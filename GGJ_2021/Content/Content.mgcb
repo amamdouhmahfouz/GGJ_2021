@@ -98,6 +98,18 @@
 /processorParam:TextureFormat=Color
 /build:PopUpWindow.png
 
+#begin Restart_Screen.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Restart_Screen.png
+
 #begin Screen.png
 /importer:TextureImporter
 /processor:TextureProcessor

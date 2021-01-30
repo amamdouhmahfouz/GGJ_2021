@@ -352,6 +352,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -386,7 +387,9 @@ namespace GGJ_2021
         private Shapes Shape;
         private bool threadInProgress = false;
         private Shapes currCommand = Shapes.None;
-
+        private bool restartScreen = false;
+        private bool submitted = false;
+        private int countCharacters = 0;
 
         public WritableCommand(SpriteFont font)
         {
@@ -435,6 +438,10 @@ namespace GGJ_2021
             float nowTime = (float)gameTime.TotalGameTime.TotalSeconds;
 
 
+            if (restartScreen || (gameObject.GetComponent<ClosePopup>().countPopups >= 1 && gameObject.GetComponent<ClosePopup>().Enabled)) return;
+
+            gameObject.GetComponent<OutlineGrid>().Enabled = true;
+            SceneManager.ActiveScene.FindGameObjectWithTag("BlueDeathScreen").Active = false;
             // ============================ Get input commands ===============================
             if (keys.Length > 0 && (nowTime - prevTime) >= 0.19)
             {
@@ -451,7 +458,7 @@ namespace GGJ_2021
                 // ===================================== Enter Pressed =========================================
                 if (keyValue == "Enter") // new line, i.e new command
                 {
-
+                    countCharacters = 0;
                     // Split the whole textCommand split into separate lines
                     string[] stringSeparators = new string[] { "\n" };
                     splitCommands = textCommand.Split(stringSeparators, StringSplitOptions.None);
@@ -489,7 +496,12 @@ namespace GGJ_2021
                     if (splitCommands.Length == 21)
                     {
                         textCommand = "";
-                    }
+                    } else if (splitCommands.Length == 5)
+                    {
+                        Errors.WindowSpam();
+                        gameObject.GetComponent<ClosePopup>().Enabled = true;
+                        gameObject.GetComponent<OutlineGrid>().Enabled = false;
+                    } 
 
                     if (splitCommands2.Count >= 1 && splitCommands2[splitCommands2.Count - 1] == "DRAWTILE();")
                     {
@@ -509,6 +521,27 @@ namespace GGJ_2021
                         gameObject.GetComponent<OutlineGrid>().Color = shapeColor;
                         gameObject.GetComponent<OutlineGrid>().Shape = Shapes.Circle;
 
+                    }
+                    else if (splitCommands2.Count >= 1 && splitCommands2[splitCommands2.Count - 1] == "PUBLISH();")
+                    {
+                        if (!submitted)
+                        {
+                            SceneManager.ActiveScene.FindGameObjectWithTag("BlueDeathScreen").Active = true;
+                            restartScreen = true;
+                            Threader.Invoke(SleepRestart, 0);
+
+                            if (splitCommands.Length >= 2)
+                            {
+                                GameObject[] gameObjects = SceneManager.ActiveScene.FindGameObjectsWithTag("Command");
+                                for (int i = gameObjects.Length - 1; i >= (int)(gameObjects.Length * 0.7); i--)
+                                    gameObjects[i].ShouldBeDeleted = true;
+                            }
+
+                        }
+
+
+                        // TODO: final submit is here
+                        
                     }
                     else if (splitCommands2[splitCommands2.Count - 1].Length == 8 && splitCommands2[splitCommands2.Count - 1].Substring(0, splitCommands2[splitCommands2.Count - 1].Length - 2) == "COLOR="
                         && splitCommands2[splitCommands2.Count - 1].Substring(splitCommands2[splitCommands2.Count - 1].Length - 1) == ";")
@@ -557,7 +590,7 @@ namespace GGJ_2021
                             textCommand = textCommand.Remove(index + 1);
                         else if (textCommand.Length >= index)
                             textCommand = textCommand.Remove(index);
-                        textCommand += "INVALID COMMAND! u IDIOT\n";
+                        textCommand += "INVALID COMMAND!\n";
                     }
 
 
@@ -572,7 +605,7 @@ namespace GGJ_2021
                     string[] stringSeparators = new string[] { "\n" };
                     splitCommands = textCommand.Split(stringSeparators, StringSplitOptions.None);
 
-
+                    countCharacters--;
                 }
 
                 else if (keyValue == "OemSemicolon")
@@ -607,8 +640,17 @@ namespace GGJ_2021
 
                     }
                     else
-                    {
-                        textCommand += keyValue.ToString();
+                    { 
+                        
+                        if (countCharacters >= 28)
+                        {
+
+                        }
+                        else
+                        {
+                            textCommand += keyValue.ToString();
+                            countCharacters++;
+                        }
 
                     }
 
@@ -619,6 +661,12 @@ namespace GGJ_2021
 
         }
 
+        private void SleepRestart()
+        {
+            Thread.Sleep(5000);
+            restartScreen = false;
+            submitted = true;
+        }
 
         private void SetShapePosition()
         {
