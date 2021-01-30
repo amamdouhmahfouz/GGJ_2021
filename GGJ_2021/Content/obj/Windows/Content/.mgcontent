@@ -4,6 +4,7 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
+    <File>C:/Users/Abdulrahman/Documents/jams/newBranches/main/GGJ_2021/GGJ_2021/Content/Book.png</File>
     <File>C:/Users/Abdulrahman/Documents/jams/newBranches/main/GGJ_2021/GGJ_2021/Content/DecisionMaker_Hatem.png</File>
     <File>C:/Users/Abdulrahman/Documents/jams/newBranches/main/GGJ_2021/GGJ_2021/Content/EntryScene..png</File>
     <File>C:/Users/Abdulrahman/Documents/jams/newBranches/main/GGJ_2021/GGJ_2021/Content/EntryScene_Decision1..png</File>
@@ -16,6 +17,7 @@
     <File>C:/Users/Abdulrahman/Documents/jams/newBranches/main/GGJ_2021/GGJ_2021/Content/Screen.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

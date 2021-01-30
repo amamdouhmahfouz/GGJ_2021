@@ -15,6 +15,8 @@ namespace GGJ_2021
         public Shapes Shape = Shapes.Tile;
         public Color Color = Color.Red;
 
+        public bool drawEnable = true;
+
         public override void Start()
         {
             Rects = new Rectangle[Rows * Columns];
@@ -27,6 +29,8 @@ namespace GGJ_2021
 
         public override void Draw(SpriteBatch spriteBatch)
         {
+            if (!drawEnable) return;
+            
             foreach (Rectangle R in Rects)
             {
                 if (R.Contains(Input.GetMousePosition()))
@@ -36,6 +40,7 @@ namespace GGJ_2021
                 }
             }
 
+            
 
             foreach (Rectangle R in Rects)
             {

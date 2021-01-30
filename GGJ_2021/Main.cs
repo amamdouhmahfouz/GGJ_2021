@@ -28,7 +28,7 @@ namespace GGJ_2021
 
             graphics.PreferMultiSampling = true;
             IsMouseVisible = true;
-            Window.AllowUserResizing = true;
+            Window.AllowUserResizing = false;
         }
 
         /// <summary>
@@ -109,14 +109,44 @@ namespace GGJ_2021
             BlueDeathScreen.GetComponent<SpriteRenderer>().Sprite.LoadTexture("Restart_Screen");
             BlueDeathScreen.Tag = "BlueDeathScreen";
 
+            GameObject DocumentationBook = new GameObject();
+            DocumentationBook.Name = "DocumentationBook";
+            DocumentationBook.AddComponent<Transform>(new Transform());
+            DocumentationBook.AddComponent<SpriteRenderer>(new SpriteRenderer());
+            DocumentationBook.GetComponent<SpriteRenderer>().Sprite = new Sprite(DocumentationBook.Transform);
+            DocumentationBook.GetComponent<SpriteRenderer>().Sprite.LoadTexture("Book");
+
+            GameObject DocumentationTxt = new GameObject();
+            DocumentationTxt.Name = "DocumentationTxt";
+            DocumentationTxt.AddComponent<Transform>(new Transform());
+            DocumentationTxt.AddComponent<Text>(new Text("DocumentationTxt", spriteFont));
+
+            GameObject DocumentationTxtRight = new GameObject();
+            DocumentationTxtRight.Name = "DocumentationTxtRight";
+            DocumentationTxtRight.AddComponent<Transform>(new Transform());
+            DocumentationTxtRight.AddComponent<Text>(new Text("DocumentationTxtRight", spriteFont));
+
+            GameObject DocumentationTxtTitle = new GameObject();
+            DocumentationTxtTitle.Name = "DocumentationTxtTitle";
+            DocumentationTxtTitle.AddComponent<Transform>(new Transform());
+            DocumentationTxtTitle.AddComponent<Text>(new Text("DocumentationTxtTitle", spriteFont));
+
             SceneManager.ActiveScene.AddGameObject(Screen);
             //SceneManager.ActiveScene.AddGameObject(Grid);
             SceneManager.ActiveScene.AddGameObject(CommandTxt);
             SceneManager.ActiveScene.AddGameObject(BlueDeathScreen);
+            SceneManager.ActiveScene.AddGameObject(DocumentationBook);
+            SceneManager.ActiveScene.AddGameObject(DocumentationTxt);
+            SceneManager.ActiveScene.AddGameObject(DocumentationTxtTitle);
+            SceneManager.ActiveScene.AddGameObject(DocumentationTxtRight);
 
             SceneManager.ActiveScene.Start();
 
             //Initialization here
+            DocumentationBook.AddChild(DocumentationTxt);
+            DocumentationBook.AddChild(DocumentationTxtTitle);
+            DocumentationBook.AddChild(DocumentationTxtRight);
+
             Screen.Transform.Scale = 0.95f * Vector2.One;
             Screen.Layer = 1;
 
@@ -134,7 +164,67 @@ namespace GGJ_2021
             BlueDeathScreen.Transform.Scale = 0.95f * Vector2.One;
             BlueDeathScreen.Active = false;
 
-            SceneManager.ActiveScene.SortGameObjectsWithLayer();
+
+            
+            //Documentation.GetComponent<Text>().Color = Color.White;
+            //DocumentationTxt.Transform.Position = new Vector2(graphics.PreferredBackBufferWidth / 2f, graphics.PreferredBackBufferHeight / 2f);
+            //Documentation.Transform.Position = new Vector2(0f, 0f);
+            DocumentationBook.Transform.Scale = 1.65f * Vector2.One;
+            DocumentationBook.Transform.Position = new Vector2(graphics.PreferredBackBufferWidth / 6.5f, -30f);
+
+            DocumentationTxt.GetComponent<Text>().text = "          -----------------------------\n" +
+                "Note: Commands must end\n" +
+                "with semicolon\n\n" + 
+                "$ COLOR: sets drawing color\n" +
+                "0: Orange, 1: White, 2: Green\n"+
+                "3: Blue, 4: Red, 5: Yellow\n" +
+                "6: Cyan, 7: Aquamarine\n" +
+                "USAGE example: COLOR=0;\n\n" +
+                "$ DRAWTILE: draws a tile on grid\n" +
+                "USAGE example: DRAWTILE();\n\n" +
+                "$ DRAWCIRCLE: draws a circle\n" +
+                "on grid\n" +
+                "USAGE example: DRAWCIRCLE();\n\n" +
+                "$ PUBLISH: publish the game after\n"+
+                "after finishing\n" +
+                "USAGE example: PUBLISH();\n\n" +
+                "PS: Left Click to place shape\n" + 
+                "    Right Click to erase shape\n";
+            DocumentationTxt.GetComponent<Text>().Color = Color.Black;
+            DocumentationTxt.GetComponent<Transform>().LocalPosition = new Vector2(170f, 258f);
+            DocumentationTxt.GetComponent<Transform>().LocalScale = new Vector2(0.25f, 0.25f);
+
+            DocumentationTxtTitle.GetComponent<Text>().text = "   Documentation\n ";
+            DocumentationTxtTitle.GetComponent<Text>().Color = Color.Black;
+            DocumentationTxtTitle.GetComponent<Transform>().LocalPosition = new Vector2(200f, 150f);
+            DocumentationTxtTitle.GetComponent<Transform>().LocalScale = new Vector2(0.35f, 0.35f);
+
+            DocumentationTxtRight.GetComponent<Text>().text = "~~~~~~~~~~~~~~~~~~~~~~~\n" +
+                "~~~~~~~~~~~~~~~~~~~~~~~\n" +
+                "~~~~~~~~~~~~~~~~~~~~~~~\n " +
+                "~~~~~~~~~~~~~~~~~~~~~~~\n " +
+                "~~~~~~~~~~~~~~~~~~~~~~~\n " +
+                "~~~~~~~~~~~~~~~~~~~~~~~\n " +
+                "~~~~~~~~~~~~~~~~~~~~~~~\n " +
+                "~~~~~~~~~~~~~~~~~~~~~~~\n" +
+                "~~~~~~~~~~~~~~~~~~~~~~~\n " +
+                "~~~~~~~~~~~~~~~~~~~~~~~\n " +
+                "~~~~~~~~~~~~~~~~~~~~~~~\n " +
+                "~~~~~~~~~~~~~~~~~~~~~~~\n " ;
+            DocumentationTxtRight.GetComponent<Text>().Color = Color.Black;
+            DocumentationTxtRight.GetComponent<Transform>().LocalPosition = new Vector2(555f, 210f);
+            DocumentationTxtRight.GetComponent<Transform>().LocalScale = new Vector2(0.25f, 0.25f);
+
+            DocumentationBook.Active = false;
+            DocumentationBook.Layer = 0.001f;
+            DocumentationTxtTitle.Layer = 0;
+            DocumentationTxt.Layer = 0;
+            DocumentationTxtRight.Layer = 0;
+            //DocumentationTxt.Active = false;
+            //DocumentationTxtTitle.Active = false;
+            //DocumentationTxtRight.Active = false;
+
+            //SceneManager.ActiveScene.SortGameObjectsWithLayer();
             
             //Errors.WindowSpam();
             //Grid.GetComponent<DrawGrid>().Width = 100;
@@ -232,8 +322,8 @@ namespace GGJ_2021
         {
             Input.GetState(); //This has to be called at the start of update method!!
 
-            if (Input.GetKeyDown(Keys.Escape))
-                Exit();
+            //if (Input.GetKeyDown(Keys.Escape))
+            //    Exit();
 
             /////////Resolution related//////////// -> Mandatory
             if (Resolution != new Vector2(graphics.PreferredBackBufferWidth, graphics.PreferredBackBufferHeight))
