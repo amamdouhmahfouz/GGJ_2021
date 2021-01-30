@@ -41,8 +41,10 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Content\Scripts\ChangeState.cs" />
     <Compile Include="Content\Scripts\ClosePopup.cs" />
     <Compile Include="Content\Scripts\Commands.cs" />
+    <Compile Include="Content\Scripts\Credits.cs" />
     <Compile Include="Content\Scripts\DrawGrid.cs" />
     <Compile Include="Content\Scripts\Errors.cs" />
     <Compile Include="Content\Scripts\OutlineGrid.cs" />

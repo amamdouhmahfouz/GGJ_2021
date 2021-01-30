@@ -73,9 +73,11 @@ namespace GGJ_2021
             SceneManager.Start();
 
             SceneManager.AddInitializer(MainScene, 0);
+            SceneManager.AddInitializer(MainMenu, 1);
             SceneManager.AddInitializer(Credits, 2);
             //////////////////////////////////////////////////////////
-            SceneManager.LoadScene(new Scene("MainScene", 0)); //Credits
+            //SceneManager.LoadScene(new Scene("MainScene", 0)); //Credits
+            SceneManager.LoadScene(new Scene("MainMenu", 1));
         }
 
         private void MainScene()
@@ -250,11 +252,13 @@ namespace GGJ_2021
             canvas.Name = "Canvas";
             canvas.AddComponent<Transform>(new Transform());
             canvas.AddComponent<Canvas>(new Canvas(Camera));
+            canvas.AddComponent<Credits>(new Credits());
 
             GameObject panel = new GameObject();
             panel.Name = "Panel";
             panel.AddComponent<Transform>(new Transform());
             panel.AddComponent<Panel>(new Panel("Panel"));
+            
 
             GameObject Credits_Text = new GameObject();
             Credits_Text.Name = "Credits_Text";
@@ -312,6 +316,96 @@ namespace GGJ_2021
             GameObject Mamdouh_Photo = GameObject.Instantiate(Oss_Photo);
             Mamdouh_Photo.GetComponent<SpriteRenderer>().Sprite.LoadTexture("Mamdouh");
             Mamdouh_Photo.Transform.Position += Vector2.UnitX * graphics.PreferredBackBufferWidth * 0.42f;
+        }
+
+        private void MainMenu()
+        {
+            // TODO: use this.Content to load your game content here
+            spriteFont = Content.Load<SpriteFont>("Font");
+
+            GameObject canvas = new GameObject();
+            canvas.Name = "Canvas";
+            canvas.AddComponent<Transform>(new Transform());
+            canvas.AddComponent<Canvas>(new Canvas(Camera));
+            canvas.AddComponent<ChangeState>(new ChangeState());
+
+            GameObject panel = new GameObject();
+            panel.Name = "Panel";
+            panel.AddComponent<Transform>(new Transform());
+            panel.AddComponent<Panel>(new Panel("Panel"));
+
+            GameObject Play = new GameObject();
+            Play.Name = "Play";
+            Play.AddComponent<Transform>(new Transform());
+            Play.AddComponent<Text>(new Text("Play", spriteFont));
+            Play.AddComponent<Button>(new Button());
+
+            GameObject Credits_Text = new GameObject();
+            Credits_Text.Name = "Credits_Text";
+            Credits_Text.AddComponent<Transform>(new Transform());
+            Credits_Text.AddComponent<Text>(new Text("Credits_Text", spriteFont));
+            Credits_Text.AddComponent<Button>(new Button());
+
+            GameObject ExitTxt = new GameObject();
+            ExitTxt.Name = "ExitTxt";
+            ExitTxt.AddComponent<Transform>(new Transform());
+            ExitTxt.AddComponent<Text>(new Text("ExitTxt", spriteFont));
+            ExitTxt.AddComponent<Button>(new Button());
+
+            GameObject Oss_Photo = new GameObject();
+            Oss_Photo.AddComponent<Transform>(new Transform());
+            Oss_Photo.AddComponent<SpriteRenderer>(new SpriteRenderer());
+            Oss_Photo.GetComponent<SpriteRenderer>().Sprite = new Sprite(Oss_Photo.Transform);
+            Oss_Photo.GetComponent<SpriteRenderer>().Sprite.LoadTexture("Oss");
+
+
+            SceneManager.ActiveScene.AddGameObject(canvas);
+            SceneManager.ActiveScene.AddGameObject(panel);
+            SceneManager.ActiveScene.AddGameObject(Credits_Text);
+            SceneManager.ActiveScene.AddGameObject(Play);
+            SceneManager.ActiveScene.AddGameObject(Oss_Photo);
+            SceneManager.ActiveScene.AddGameObject(ExitTxt);
+
+            SceneManager.ActiveScene.Start();
+
+            //Initialization here
+            canvas.AddChild(panel);
+            panel.AddChild(Credits_Text);
+            panel.AddChild(Oss_Photo);
+            panel.AddChild(Play);
+            panel.AddChild(ExitTxt);
+
+            panel.GetComponent<Panel>().Color = Color.Black;
+            panel.GetComponent<Panel>().FillTheScreen();
+
+            Play.GetComponent<Text>().text = "Play";
+            Play.GetComponent<Text>().Color = Color.White;
+            Play.Transform.Position = new Vector2(graphics.PreferredBackBufferWidth / 2.0f, graphics.PreferredBackBufferHeight * 0.25f);
+            Play.GetComponent<Button>().Size = new Point(160,60);
+            Play.GetComponent<Button>().IdleColor = Color.Red * 0.0f;
+            Play.GetComponent<Button>().HighlightColor = Color.AliceBlue * 0.2f;
+
+            Credits_Text.GetComponent<Text>().text = "Credits";
+            Credits_Text.GetComponent<Text>().Color = Color.White;
+            Credits_Text.Transform.Position = new Vector2(graphics.PreferredBackBufferWidth / 2.0f, graphics.PreferredBackBufferHeight * 0.45f);
+            Credits_Text.GetComponent<Button>().Size = new Point(160, 60);
+            Credits_Text.GetComponent<Button>().IdleColor = Color.Red * 0.0f;
+            Credits_Text.GetComponent<Button>().HighlightColor = Color.AliceBlue * 0.2f;
+
+
+            ExitTxt.GetComponent<Text>().text = "Exit";
+            ExitTxt.GetComponent<Text>().Color = Color.White;
+            ExitTxt.Transform.Position = new Vector2(graphics.PreferredBackBufferWidth / 2.0f, graphics.PreferredBackBufferHeight * 0.65f);
+            ExitTxt.GetComponent<Button>().Size = new Point(160, 60);
+            ExitTxt.GetComponent<Button>().IdleColor = Color.Red * 0.0f;
+            ExitTxt.GetComponent<Button>().HighlightColor = Color.AliceBlue * 0.2f;
+
+            //GameObject Engine_Text = GameObject.Instantiate(Credits_Text);
+            //panel.AddChild(Engine_Text);
+            //Engine_Text.GetComponent<Text>().text = "Engine Programming\n            & Art";
+            //Engine_Text.Transform.Position = new Vector2(graphics.PreferredBackBufferWidth / 3.2f, graphics.PreferredBackBufferHeight * 0.3f);
+
+
         }
 
         /// <summary>
