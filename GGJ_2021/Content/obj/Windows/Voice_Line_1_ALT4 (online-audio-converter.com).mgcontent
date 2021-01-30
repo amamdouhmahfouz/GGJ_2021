@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SourceFile>C:/MonoGame Projects/Windows/GGJ_2021/GGJ_2021/GGJ_2021/Content/Voice_Line_1_ALT4 (online-audio-converter.com).wav</SourceFile>
+  <SourceTime>2021-01-30T21:10:41.5710264+02:00</SourceTime>
+  <DestFile>C:/MonoGame Projects/Windows/GGJ_2021/GGJ_2021/GGJ_2021/Content/bin/Windows/Voice_Line_1_ALT4 (online-audio-converter.com).xnb</DestFile>
+  <DestTime>2021-01-30T21:31:57.6611266+02:00</DestTime>
+  <Importer>WavImporter</Importer>
+  <ImporterTime>2018-12-08T18:35:54+02:00</ImporterTime>
+  <Processor>SoundEffectProcessor</Processor>
+  <ProcessorTime>2018-12-08T18:35:54+02:00</ProcessorTime>
+  <Parameters>
+    <Key>Quality</Key>
+    <Value>Best</Value>
+  </Parameters>
+  <Dependencies />
+  <BuildAsset />
+  <BuildOutput />
+</PipelineBuildEvent>

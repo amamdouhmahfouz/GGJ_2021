@@ -25,19 +25,13 @@
 /processorParam:TextureFormat=Color
 /build:DecisionMaker_Hatem.png
 
-#begin EntryScene..png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:EntryScene..png
+#begin DST-909Dreams.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:DST-909Dreams.mp3;Dreams.mp3
 
-#begin EntryScene_Decision1..png
+#begin EntryScene.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -47,7 +41,7 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:EntryScene_Decision1..png
+/build:EntryScene.png
 
 #begin erro (online-audio-converter.com).wav
 /importer:WavImporter
@@ -62,6 +56,30 @@
 /processorParam:TextureFormat=Compressed
 /build:Font.spritefont
 
+#begin Hatem_Celebrating-Sheet.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Hatem_Celebrating-Sheet.png
+
+#begin Hatem_Interactions.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Hatem_Interactions.png
+
 #begin Mamdouh.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -73,6 +91,18 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:Mamdouh.png
+
+#begin Manuscript.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Manuscript.png
 
 #begin Oss.png
 /importer:TextureImporter
@@ -109,4 +139,58 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:Screen.png
+
+#begin SeeingReviews.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:SeeingReviews.png
+
+#begin SteamPage.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:SteamPage.png
+
+#begin SubmittingGame.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:SubmittingGame.png
+
+#begin Voice_Line_1_ALT4 (online-audio-converter.com).wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Voice_Line_1_ALT4 (online-audio-converter.com).wav;VL1.wav
+
+#begin Voice_Line_2_ALT (online-audio-converter.com).wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Voice_Line_2_ALT (online-audio-converter.com).wav;VL2.wav
+
+#begin Voice_Line_4_ALT3 (online-audio-converter.com).wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Voice_Line_4_ALT3 (online-audio-converter.com).wav;VL4.wav
 
