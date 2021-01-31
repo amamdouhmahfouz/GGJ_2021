@@ -156,6 +156,7 @@ namespace GGJ_2021
                         Errors.WindowSpam();
                         gameObject.GetComponent<ClosePopup>().Enabled = true;
                         gameObject.GetComponent<OutlineGrid>().Enabled = false;
+                        Threader.Invoke(ContinueStory, 3000);
                     } 
 
                     if (splitCommands2.Count >= 1 && splitCommands2[splitCommands2.Count - 1] == "DRAWTILE();")
@@ -183,9 +184,21 @@ namespace GGJ_2021
                     {
                         if (!submitted && countCommandsForPopups != 5 && countDrawCommands >= 1)
                         {
+                            if (!popupsOnce) 
+                            {
+                                popupsOnce = true;
+                                Errors.WindowSpam();
+                                gameObject.GetComponent<ClosePopup>().Enabled = true;
+                                gameObject.GetComponent<OutlineGrid>().Enabled = false;
+                                Threader.Invoke(ContinueStory, 3000);
+                                return;
+                            }
+
                             SceneManager.ActiveScene.FindGameObjectWithTag("BlueDeathScreen").Active = true;
                             restartScreen = true;
                             Threader.Invoke(SleepRestart, 0);
+
+                            
 
                             restartScreenOnce = true;
 
@@ -196,10 +209,14 @@ namespace GGJ_2021
                                     gameObjects[i].ShouldBeDeleted = true;
                             }
 
+                        } else if (submitted && countDrawCommands >= 1)
+                        {
+                            SceneManager.ActiveScene.FindGameObjectWithName("STORY").Active = true;
                         }
 
 
                         // TODO: final submit is here
+
                         
                     }
                     else if (splitCommands2[splitCommands2.Count - 1].Length == 8 && splitCommands2[splitCommands2.Count - 1].Substring(0, splitCommands2[splitCommands2.Count - 1].Length - 2) == "COLOR="
@@ -264,6 +281,7 @@ namespace GGJ_2021
                         Errors.WindowSpam();
                         gameObject.GetComponent<ClosePopup>().Enabled = true;
                         gameObject.GetComponent<OutlineGrid>().Enabled = false;
+                        Threader.Invoke(ContinueStory, 3000);
                         return;
                     }
 
@@ -294,6 +312,7 @@ namespace GGJ_2021
                         Errors.WindowSpam();
                         gameObject.GetComponent<ClosePopup>().Enabled = true;
                         gameObject.GetComponent<OutlineGrid>().Enabled = false;
+                        Threader.Invoke(ContinueStory, 3000);
                     }
 
                 }
@@ -361,9 +380,18 @@ namespace GGJ_2021
             Thread.Sleep(5000);
             restartScreen = false;
             submitted = true;
+            SceneManager.ActiveScene.FindGameObjectWithName("STORY").Active = true;
         }
 
-        
+        private void ContinueStory()
+        {
+            SceneManager.ActiveScene.FindGameObjectWithName("AllPopups").Active = false;
+
+            SceneManager.ActiveScene.FindGameObjectWithName("STORY").Active = true;
+
+        }
+
+
 
 
         public override GameObjectComponent DeepCopy(GameObject Clone)

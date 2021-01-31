@@ -24,7 +24,13 @@ namespace GGJ_2021
             Popup.GetComponent<AudioSource>().Play();
             Popup.GetComponent<BoxCollider2D>().Bounds = new Rectangle(Popup.GetComponent<BoxCollider2D>().Bounds.Width - 22, 0, 22, 22);
 
+            GameObject AllPopups = new GameObject();
+            AllPopups.AddComponent<Transform>(new Transform());
+            AllPopups.Name = "AllPopups";
+            AllPopups.AddChild(Popup);
+
             SceneManager.ActiveScene.AddGameObject(Popup);
+            SceneManager.ActiveScene.AddGameObject(AllPopups);
 
             for(int i=1; i < 25; i++)
             {

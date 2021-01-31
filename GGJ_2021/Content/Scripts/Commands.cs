@@ -21,6 +21,8 @@ namespace GGJ_2021
             Rectangle.Transform.Position = Destination.Location.ToVector2();
             Rectangle.Transform.Scale = Destination.Size.ToVector2();
 
+            SceneManager.ActiveScene.FindGameObjectWithName("CommandTxt").AddChild(Rectangle);
+
             SceneManager.ActiveScene.AddGameObject(Rectangle);
         }
 
@@ -37,6 +39,8 @@ namespace GGJ_2021
             Circle.GetComponent<SpriteRenderer>().Sprite.Transform = Circle.Transform;
 
             Circle.Transform.Position = Position;
+
+            SceneManager.ActiveScene.FindGameObjectWithName("CommandTxt").AddChild(Circle);
 
             SceneManager.ActiveScene.AddGameObject(Circle);
         }

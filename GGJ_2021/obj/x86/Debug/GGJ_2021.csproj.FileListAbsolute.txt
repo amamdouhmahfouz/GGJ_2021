@@ -35,8 +35,6 @@ C:\MonoGame Projects\Windows\GGJ_2021\GGJ_2021\GGJ_2021\bin\Windows\x86\Debug\Co
 C:\MonoGame Projects\Windows\GGJ_2021\GGJ_2021\GGJ_2021\bin\Windows\x86\Debug\Content\EntryScene_Decision1..xnb
 C:\MonoGame Projects\Windows\GGJ_2021\GGJ_2021\GGJ_2021\bin\Windows\x86\Debug\Content\Screen.xnb
 C:\Users\Abdulrahman\Documents\jams\newBranches\main\GGJ_2021\GGJ_2021\bin\Windows\x86\Debug\Content\DecisionMaker_Hatem.xnb
-C:\Users\Abdulrahman\Documents\jams\newBranches\main\GGJ_2021\GGJ_2021\bin\Windows\x86\Debug\Content\EntryScene..xnb
-C:\Users\Abdulrahman\Documents\jams\newBranches\main\GGJ_2021\GGJ_2021\bin\Windows\x86\Debug\Content\EntryScene_Decision1..xnb
 C:\Users\Abdulrahman\Documents\jams\newBranches\main\GGJ_2021\GGJ_2021\bin\Windows\x86\Debug\Content\Font.xnb
 C:\Users\Abdulrahman\Documents\jams\newBranches\main\GGJ_2021\GGJ_2021\bin\Windows\x86\Debug\Content\Mamdouh.xnb
 C:\Users\Abdulrahman\Documents\jams\newBranches\main\GGJ_2021\GGJ_2021\bin\Windows\x86\Debug\Content\Oss.xnb
@@ -69,3 +67,17 @@ C:\Users\Abdulrahman\Documents\jams\newBranches\main\GGJ_2021\GGJ_2021\obj\x86\D
 C:\Users\Abdulrahman\Documents\jams\newBranches\main\GGJ_2021\GGJ_2021\obj\x86\Debug\GGJ_2021.pdb
 C:\Users\Abdulrahman\Documents\jams\newBranches\main\GGJ_2021\GGJ_2021\bin\Windows\x86\Debug\Content\Restart_Screen.xnb
 C:\Users\Abdulrahman\Documents\jams\newBranches\main\GGJ_2021\GGJ_2021\bin\Windows\x86\Debug\Content\Book.xnb
+C:\Users\Abdulrahman\Documents\jams\newBranches\main\GGJ_2021\GGJ_2021\bin\Windows\x86\Debug\Content\Dreams.wma
+C:\Users\Abdulrahman\Documents\jams\newBranches\main\GGJ_2021\GGJ_2021\bin\Windows\x86\Debug\Content\Dreams.xnb
+C:\Users\Abdulrahman\Documents\jams\newBranches\main\GGJ_2021\GGJ_2021\bin\Windows\x86\Debug\Content\EntryScene.xnb
+C:\Users\Abdulrahman\Documents\jams\newBranches\main\GGJ_2021\GGJ_2021\bin\Windows\x86\Debug\Content\Hatem_Celebrating-Sheet.xnb
+C:\Users\Abdulrahman\Documents\jams\newBranches\main\GGJ_2021\GGJ_2021\bin\Windows\x86\Debug\Content\Hatem_Interactions.xnb
+C:\Users\Abdulrahman\Documents\jams\newBranches\main\GGJ_2021\GGJ_2021\bin\Windows\x86\Debug\Content\Manuscript.xnb
+C:\Users\Abdulrahman\Documents\jams\newBranches\main\GGJ_2021\GGJ_2021\bin\Windows\x86\Debug\Content\Screen2.xnb
+C:\Users\Abdulrahman\Documents\jams\newBranches\main\GGJ_2021\GGJ_2021\bin\Windows\x86\Debug\Content\SeeingReviews.xnb
+C:\Users\Abdulrahman\Documents\jams\newBranches\main\GGJ_2021\GGJ_2021\bin\Windows\x86\Debug\Content\SteamPage.xnb
+C:\Users\Abdulrahman\Documents\jams\newBranches\main\GGJ_2021\GGJ_2021\bin\Windows\x86\Debug\Content\SubmittingGame.xnb
+C:\Users\Abdulrahman\Documents\jams\newBranches\main\GGJ_2021\GGJ_2021\bin\Windows\x86\Debug\Content\VL1.xnb
+C:\Users\Abdulrahman\Documents\jams\newBranches\main\GGJ_2021\GGJ_2021\bin\Windows\x86\Debug\Content\VL2.xnb
+C:\Users\Abdulrahman\Documents\jams\newBranches\main\GGJ_2021\GGJ_2021\bin\Windows\x86\Debug\Content\VL4.xnb
+C:\Users\Abdulrahman\Documents\jams\newBranches\main\GGJ_2021\GGJ_2021\bin\Windows\x86\Debug\Content\Hatem_Celebrating-Sheet (1).xnb

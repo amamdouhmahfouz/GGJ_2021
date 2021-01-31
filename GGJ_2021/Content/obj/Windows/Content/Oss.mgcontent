@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <SourceFile>C:/Users/Abdulrahman/Documents/jams/newBranches/main/GGJ_2021/GGJ_2021/Content/Oss.png</SourceFile>
-  <SourceTime>2021-01-29T21:53:25.805593+02:00</SourceTime>
+  <SourceTime>2021-01-31T00:11:47.9344104+02:00</SourceTime>
   <DestFile>C:/Users/Abdulrahman/Documents/jams/newBranches/main/GGJ_2021/GGJ_2021/Content/bin/Windows/Content/Oss.xnb</DestFile>
-  <DestTime>2021-01-29T22:01:03.0502312+02:00</DestTime>
+  <DestTime>2021-01-31T00:35:13.1450292+02:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2018-12-08T18:35:54+02:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

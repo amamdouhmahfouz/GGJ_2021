@@ -75,9 +75,11 @@ namespace GGJ_2021
             SceneManager.AddInitializer(MainScene, 0);
             SceneManager.AddInitializer(MainMenu, 1);
             SceneManager.AddInitializer(Credits, 2);
+            //SceneManager.AddInitializer(Intro, 3);
             //////////////////////////////////////////////////////////
             //SceneManager.LoadScene(new Scene("MainScene", 0)); //Credits
             SceneManager.LoadScene(new Scene("MainMenu", 1));
+            //SceneManager.LoadScene(new Scene("Intro", 3));
         }
 
         private void MainScene()
@@ -90,6 +92,7 @@ namespace GGJ_2021
             Screen.AddComponent<SpriteRenderer>(new SpriteRenderer());
             Screen.GetComponent<SpriteRenderer>().Sprite = new Sprite(Screen.Transform);
             Screen.GetComponent<SpriteRenderer>().Sprite.LoadTexture("Screen");
+            Screen.Name = "Screen";
 
             //GameObject Grid = new GameObject();
             //Grid.AddComponent<DrawGrid>(new DrawGrid(new Vector2(graphics.PreferredBackBufferWidth * 0.43f, graphics.PreferredBackBufferHeight * 0.15f), 15, 15, 50));
@@ -138,6 +141,46 @@ namespace GGJ_2021
             F1_help.AddComponent<Transform>(new Transform());
             F1_help.AddComponent<Text>(new Text("F1_help", spriteFont));
 
+
+            GameObject EntryScene = new GameObject();
+            EntryScene.AddComponent<Transform>(new Transform());
+            EntryScene.AddComponent<SpriteRenderer>(new SpriteRenderer());
+            EntryScene.GetComponent<SpriteRenderer>().Sprite = new Sprite(EntryScene.Transform);
+            EntryScene.GetComponent<SpriteRenderer>().Sprite.LoadTexture("EntryScene");
+
+            GameObject EntryText = new GameObject();
+            EntryText.AddComponent<Transform>(new Transform());
+            EntryText.AddComponent<Text>(new Text("EntryText", spriteFont));
+
+            GameObject Manuscript1 = new GameObject();
+            Manuscript1.AddComponent<Transform>(new Transform());
+            Manuscript1.AddComponent<SpriteRenderer>(new SpriteRenderer());
+            Manuscript1.GetComponent<SpriteRenderer>().Sprite = new Sprite(Manuscript1.Transform);
+            Manuscript1.GetComponent<SpriteRenderer>().Sprite.LoadTexture("Manuscript");
+
+            GameObject Transition = new GameObject();
+            Transition.AddComponent<Transform>(new Transform());
+            Transition.AddComponent<Panel>(new Panel("Transition"));
+            Transition.AddComponent<PropertiesAnimator>(new PropertiesAnimator());
+            Transition.AddComponent<TransitionClass>(new TransitionClass());
+
+            GameObject HatemScene1 = new GameObject();
+            HatemScene1.AddComponent<Transform>(new Transform());
+            HatemScene1.AddComponent<SpriteRenderer>(new SpriteRenderer());
+            HatemScene1.GetComponent<SpriteRenderer>().Sprite = new Sprite(HatemScene1.Transform);
+            HatemScene1.GetComponent<SpriteRenderer>().Sprite.LoadTexture("Hatem_Interactions");
+            HatemScene1.AddComponent<AudioSource>(new AudioSource("VL1"));
+            HatemScene1.AddComponent<Animator>(new Animator());
+
+            GameObject STORY = new GameObject();
+            STORY.Name = "STORY";
+            STORY.AddComponent<Story>(new Story());
+
+            GameObject Finisher = new GameObject();
+            Finisher.Name = "Finisher";
+            Finisher.AddComponent<Transform>(new Transform());
+            Finisher.AddComponent<Text>(new Text("Finisher", spriteFont));
+
             SceneManager.ActiveScene.AddGameObject(Screen);
             //SceneManager.ActiveScene.AddGameObject(Grid);
             SceneManager.ActiveScene.AddGameObject(CommandTxt);
@@ -147,6 +190,19 @@ namespace GGJ_2021
             SceneManager.ActiveScene.AddGameObject(DocumentationTxtTitle);
             SceneManager.ActiveScene.AddGameObject(DocumentationTxtRight);
             SceneManager.ActiveScene.AddGameObject(F1_help);
+
+            SceneManager.ActiveScene.AddGameObject(EntryScene);
+            SceneManager.ActiveScene.AddGameObject(EntryText);
+            SceneManager.ActiveScene.AddGameObject(Manuscript1);
+            SceneManager.ActiveScene.AddGameObject(Transition);
+            SceneManager.ActiveScene.AddGameObject(HatemScene1);
+            SceneManager.ActiveScene.AddGameObject(STORY);
+            SceneManager.ActiveScene.AddGameObject(Finisher);
+
+            MediaSource.IsLooping = true;
+            MediaSource.LoadTrack("Dreams");
+            MediaSource.Volume = 0.25f;
+            MediaSource.Play();
 
             SceneManager.ActiveScene.Start();
 
@@ -226,9 +282,9 @@ namespace GGJ_2021
 
             DocumentationBook.Active = false;
             DocumentationBook.Layer = 0.001f;
-            DocumentationTxtTitle.Layer = 0;
-            DocumentationTxt.Layer = 0;
-            DocumentationTxtRight.Layer = 0;
+            DocumentationTxtTitle.Layer = 0.0005f;
+            DocumentationTxt.Layer = 0.0005f;
+            DocumentationTxtRight.Layer = 0.0005f;
 
             F1_help.Layer = 0.004f;
             F1_help.GetComponent<Text>().Color = Color.Beige;
@@ -236,12 +292,90 @@ namespace GGJ_2021
             F1_help.GetComponent<Transform>().Position = new Vector2(150f, 103f);
             F1_help.GetComponent<Transform>().Scale *= 0.45f;
 
+            EntryScene.Layer = 0;
+            EntryScene.Transform.Scale = 1.5f * Vector2.One;
+            EntryScene.GetComponent<SpriteRenderer>().Sprite.Transform = EntryScene.Transform;
+
+            EntryText.GetComponent<Text>().Color = Color.Black;
+            EntryText.Transform.Position = new Vector2(graphics.PreferredBackBufferWidth * 0.78f, graphics.PreferredBackBufferHeight * 0.4f);
+            EntryText.GetComponent<Text>().text = "A typical day\nin the life of Ahmed\nHatem who works\nin A company named\n'Our Engine Socks'\nwhere he is making\na game using\nthe engine...";
+            EntryText.Layer = 0.0003f;
+
+            Manuscript1.GetComponent<SpriteRenderer>().Sprite.Transform = Manuscript1.Transform;
+            Manuscript1.Transform.Position = new Vector2(graphics.PreferredBackBufferWidth * 0.57f, 0);
+            Manuscript1.Layer = 0.0004f;
+            Manuscript1.Name = "Manuscript1";
+
+            Transition.Layer = 0;
+            Transition.Name = "Transition";
+            Transition.GetComponent<Panel>().FillTheScreen();
+
+            KeyFrame keyFrame = new KeyFrame(1, 0, 2.5f, "FadeIn");
+            Transition.GetComponent<PropertiesAnimator>().AddKeyFrame(keyFrame, true);
+
+            HatemScene1.Name = "HatemScene1";
+            HatemScene1.GetComponent<SpriteRenderer>().Sprite.SourceRectangle = new Rectangle(0, 0, HatemScene1.GetComponent<SpriteRenderer>().Sprite.Texture.Width / 4, HatemScene1.GetComponent<SpriteRenderer>().Sprite.Texture.Height);
+            HatemScene1.Layer = 0;
+            HatemScene1.Transform.Scale = 1.5f * Vector2.One;
+
+            Animation animation = new Animation(HatemScene1.GetComponent<SpriteRenderer>().Sprite,2);
+            animation.Tag = "PissedOff";
+            animation.Speed = 0.5f;
+            animation.PlayOnAwake = false;
+            animation.IsLooping = true;
+
+            HatemScene1.GetComponent<Animator>().AnimationClips.Add(animation);
+            HatemScene1.GetComponent<Animator>().Enabled = false;
+            HatemScene1.Active = false;
+
+            Threader.Invoke(EnableHatem1, 6000);
+
+            void EnableHatem1()
+            {
+                HatemScene1.Active = true;
+                HatemScene1.GetComponent<AudioSource>().Play();
+
+                Threader.Invoke(EnableGame, (uint)(HatemScene1.GetComponent<AudioSource>().ClipLength() + 1) * 1000);
+            }
+
+            void EnableGame()
+            {
+                EntryScene.Active = false;
+                Manuscript1.Active = false;
+                HatemScene1.Active = false;
+                SceneManager.ActiveScene.FindGameObjectWithName("CommandTxt").Active = true;
+                SceneManager.ActiveScene.FindGameObjectWithName("F1_help").Active = true;
+                SceneManager.ActiveScene.FindGameObjectWithName("Screen").Active = true;
+            }
+
+
+            Manuscript1.AddChild(EntryText);
+
+
+            STORY.Active = false;
+
+            Finisher.Transform.Position = new Vector2(graphics.PreferredBackBufferWidth * 0.5f, graphics.PreferredBackBufferHeight * 0.4f);
+            Finisher.GetComponent<Text>().Color = Color.White;
+            Finisher.GetComponent<Text>().text = "Ahmed might have felt that he lost all his time and effort\nworking on this game,"
++ " but eventually, he found appreciation\nand inspiration in the eyes of others...\n\n'You have to get lost before you can be found'\n                                                             'Jeff Rasley'\n\n                                        THE END";
+            Finisher.Active = false;
+
+            Screen.Active = false;
+            CommandTxt.Active = false;
+            F1_help.Active = false;
+
+            if (DocumentationTxtRight.Parent == DocumentationBook)
+                System.Console.WriteLine("7ader");
+            F1_help.AddChild(DocumentationBook);
+
             //SceneManager.ActiveScene.SortGameObjectsWithLayer();
 
             //Errors.WindowSpam();
             //Grid.GetComponent<DrawGrid>().Width = 100;
             //Grid.GetComponent<DrawGrid>().Height = 100;
         }
+
+
 
         private void Credits()
         {
@@ -408,6 +542,52 @@ namespace GGJ_2021
 
         }
 
+
+        private void Intro()
+        {
+            /////////////////////////////////////////////////
+            /// Only called once at the start
+            /////////////////////////////////////////////////
+
+            spriteFont = Content.Load<SpriteFont>("Font");
+
+            GameObject canvas = new GameObject();
+            canvas.Name = "Canvas";
+            canvas.AddComponent<Transform>(new Transform());
+            canvas.AddComponent<Canvas>(new Canvas(Camera));
+
+            GameObject panel = new GameObject();
+            panel.Name = "Panel";
+            panel.AddComponent<Transform>(new Transform());
+            panel.AddComponent<Panel>(new Panel("Panel"));
+
+            GameObject IntroTxt = new GameObject();
+            IntroTxt.Name = "IntroTxt";
+            IntroTxt.AddComponent<Transform>(new Transform());
+            IntroTxt.AddComponent<Text>(new Text("IntroTxt", spriteFont));
+
+            SceneManager.ActiveScene.AddGameObject(canvas);
+            SceneManager.ActiveScene.AddGameObject(panel);
+            SceneManager.ActiveScene.AddGameObject(IntroTxt);
+
+            SceneManager.ActiveScene.Start();
+
+            //Initialization here
+            canvas.AddChild(panel);
+            panel.AddChild(IntroTxt);
+
+            IntroTxt.GetComponent<Text>().text = "From Newbies"; //© ®
+            IntroTxt.GetComponent<Text>().Color = Color.AntiqueWhite;
+            IntroTxt.Transform.Position = new Vector2(700, 300);
+
+            panel.Transform.Scale *= 2f;
+
+            //IntroTxt.Layer = 0.4f;
+            //panel.Layer = 0f;
+            //panel.GetComponent<Panel>().Color = Color.*100f;
+
+        }
+
         /// <summary>
         /// UnloadContent will be called once per game and is the place to unload
         /// game-specific content.
@@ -436,23 +616,6 @@ namespace GGJ_2021
             Resolution = new Vector2(graphics.PreferredBackBufferWidth, graphics.PreferredBackBufferHeight);
             ///////////////////////////////////////
 
-            //passing a property as a refrence using delegates
-            //Arrow.GetComponent<PropertiesAnimator>().GetKeyFrame("Rotate360").GetFeedback(value => Arrow.Transform.Rotation = value);
-
-            //if (Keyboard.GetState().IsKeyDown(Keys.Z))
-            //    Camera.Zoom += (float)gameTime.ElapsedGameTime.TotalSeconds;
-            //else if (Keyboard.GetState().IsKeyDown(Keys.X))
-            //    Camera.Zoom -= (float)gameTime.ElapsedGameTime.TotalSeconds;
-
-            //if (Input.GetKeyDown(Keys.O))
-            //    SceneManager.ActiveScene.FindGameObjectWithName("CommandTxt").Active = !SceneManager.ActiveScene.FindGameObjectWithName("CommandTxt").Active;
-
-            //if (Input.GetKeyDown(Keys.O))
-            //{
-            //    SceneManager.ActiveScene.FindGameObjectWithName("CommandTxt").GetComponent<WritableCommand>().Enabled = !SceneManager.ActiveScene.FindGameObjectWithName("CommandTxt").GetComponent<WritableCommand>().Enabled;
-            //    SceneManager.ActiveScene.FindGameObjectWithName("CommandTxt").GetComponent<OutlineGrid>().Enabled = !SceneManager.ActiveScene.FindGameObjectWithName("CommandTxt").GetComponent<OutlineGrid>().Enabled;
-            //}
-    
 
             SceneManager.ActiveScene.Update(gameTime);
             

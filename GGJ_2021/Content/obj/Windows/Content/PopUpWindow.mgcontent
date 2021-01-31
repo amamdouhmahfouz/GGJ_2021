@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <SourceFile>C:/Users/Abdulrahman/Documents/jams/newBranches/main/GGJ_2021/GGJ_2021/Content/PopUpWindow.png</SourceFile>
-  <SourceTime>2021-01-29T21:53:25.8096032+02:00</SourceTime>
+  <SourceTime>2021-01-31T00:11:47.9383919+02:00</SourceTime>
   <DestFile>C:/Users/Abdulrahman/Documents/jams/newBranches/main/GGJ_2021/GGJ_2021/Content/bin/Windows/Content/PopUpWindow.xnb</DestFile>
-  <DestTime>2021-01-29T22:01:03.065221+02:00</DestTime>
+  <DestTime>2021-01-31T00:35:13.1620199+02:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2018-12-08T18:35:54+02:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
