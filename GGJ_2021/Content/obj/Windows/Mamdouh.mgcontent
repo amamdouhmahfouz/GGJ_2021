@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>C:/Users/Abdulrahman/Documents/jams/newBranches/main/GGJ_2021/GGJ_2021/Content/Mamdouh.png</SourceFile>
-  <SourceTime>2021-01-31T00:11:47.9254018+02:00</SourceTime>
-  <DestFile>C:/Users/Abdulrahman/Documents/jams/newBranches/main/GGJ_2021/GGJ_2021/Content/bin/Windows/Mamdouh.xnb</DestFile>
-  <DestTime>2021-01-31T00:23:30.5277481+02:00</DestTime>
+<PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SourceFile>C:/GGJ_2021_LB/GGJ_2021/GGJ_2021/Content/Mamdouh.png</SourceFile>
+  <SourceTime>2021-01-31T10:32:33.2036726+02:00</SourceTime>
+  <DestFile>C:/GGJ_2021_LB/GGJ_2021/GGJ_2021/Content/bin/Windows/Mamdouh.xnb</DestFile>
+  <DestTime>2021-01-31T10:38:07.3492683+02:00</DestTime>
   <Importer>TextureImporter</Importer>
-  <ImporterTime>2020-08-10T16:17:54+02:00</ImporterTime>
+  <ImporterTime>2018-12-08T18:35:54+02:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
-  <ProcessorTime>2020-08-10T16:17:54+02:00</ProcessorTime>
+  <ProcessorTime>2018-12-08T18:35:54+02:00</ProcessorTime>
   <Parameters>
     <Key>ColorKeyColor</Key>
     <Value>255,0,255,255</Value>

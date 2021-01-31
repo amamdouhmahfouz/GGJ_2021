@@ -42,8 +42,7 @@ namespace GGJ_2021
 
                 GO.GetComponent<SpriteRenderer>().Sprite.Transform = GO.Transform;
                 GO.GetComponent<SpriteRenderer>().Sprite.SourceRectangle = new Rectangle(GO.GetComponent<SpriteRenderer>().Sprite.SourceRectangle.Width * 2, 0, GO.GetComponent<SpriteRenderer>().Sprite.SourceRectangle.Width, GO.GetComponent<SpriteRenderer>().Sprite.SourceRectangle.Height);
-                //GO.GetComponent<AudioSource>().LoadSoundEffect("VL3");
-                GO.GetComponent<AudioSource>().LoadSoundEffect("VL2");
+                GO.GetComponent<AudioSource>().LoadSoundEffect("VL3");
                 GO.GetComponent<AudioSource>().Play();
                 Done2 = true;
                 GO.GetComponent<Animator>().Enabled = true;
@@ -64,7 +63,7 @@ namespace GGJ_2021
                 SceneManager.ActiveScene.FindGameObjectWithName("Screen").Active = false;
 
                 GO.GetComponent<Animator>().Enabled = false;
-                GO.GetComponent<SpriteRenderer>().Sprite.LoadTexture("SubmittingGame");
+                GO.GetComponent<SpriteRenderer>().Sprite.LoadTexture("SubmittingGameV2");
                 GO.GetComponent<AudioSource>().LoadSoundEffect("VL4");
                 GO.GetComponent<AudioSource>().Play();
                 Done3 = true;
@@ -149,8 +148,7 @@ namespace GGJ_2021
         private void CutScene7()
         {
             GameObject GO = SceneManager.ActiveScene.FindGameObjectWithName("HatemScene1");
-            //GO.GetComponent<AudioSource>().LoadSoundEffect("VL5");
-            GO.GetComponent<AudioSource>().LoadSoundEffect("VL2");
+            GO.GetComponent<AudioSource>().LoadSoundEffect("VL5");
 
             GO.GetComponent<AudioSource>().Play();
 
@@ -164,7 +162,7 @@ namespace GGJ_2021
             SceneManager.ActiveScene.FindGameObjectWithName("HatemScene1").Active = false;
             SceneManager.ActiveScene.FindGameObjectWithName("Manuscript1").Active = false;
 
-            Threader.Invoke(InvokeCredits, 12000);
+            Threader.Invoke(InvokeCredits, 13000);
 
         }
 

@@ -104,6 +104,18 @@
 /processorParam:TextureFormat=Color
 /build:Hatem_Interactions.png
 
+#begin HatemFace.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:HatemFace.png
+
 #begin Mamdouh.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -224,6 +236,18 @@
 /processorParam:TextureFormat=Color
 /build:SubmittingGame.png
 
+#begin SubmittingGameV2.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:SubmittingGameV2.png
+
 #begin Voice_Line_1_ALT4 (online-audio-converter.com).wav
 /importer:WavImporter
 /processor:SoundEffectProcessor
@@ -236,9 +260,21 @@
 /processorParam:Quality=Best
 /build:Voice_Line_2_ALT (online-audio-converter.com).wav;VL2.wav
 
+#begin Voice_Line_3_ALT (online-audio-converter.com).wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Voice_Line_3_ALT (online-audio-converter.com).wav;VL3.wav
+
 #begin Voice_Line_4_ALT3 (online-audio-converter.com).wav
 /importer:WavImporter
 /processor:SoundEffectProcessor
 /processorParam:Quality=Best
 /build:Voice_Line_4_ALT3 (online-audio-converter.com).wav;VL4.wav
+
+#begin Voice_Line_5 (online-audio-converter.com).wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Voice_Line_5 (online-audio-converter.com).wav;VL5.wav
 

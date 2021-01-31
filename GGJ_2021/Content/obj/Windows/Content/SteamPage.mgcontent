@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/Abdulrahman/Documents/jams/newBranches/main/GGJ_2021/GGJ_2021/Content/SteamPage.png</SourceFile>
-  <SourceTime>2021-01-31T00:11:48.0143629+02:00</SourceTime>
-  <DestFile>C:/Users/Abdulrahman/Documents/jams/newBranches/main/GGJ_2021/GGJ_2021/Content/bin/Windows/Content/SteamPage.xnb</DestFile>
-  <DestTime>2021-01-31T00:35:13.9157032+02:00</DestTime>
+  <SourceFile>C:/GGJ_2021_LB/GGJ_2021/GGJ_2021/Content/SteamPage.png</SourceFile>
+  <SourceTime>2021-01-31T10:32:33.2146727+02:00</SourceTime>
+  <DestFile>C:/GGJ_2021_LB/GGJ_2021/GGJ_2021/Content/bin/Windows/Content/SteamPage.xnb</DestFile>
+  <DestTime>2021-01-31T10:43:33.0755795+02:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2018-12-08T18:35:54+02:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

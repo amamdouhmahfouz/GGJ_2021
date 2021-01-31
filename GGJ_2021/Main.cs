@@ -450,6 +450,18 @@ namespace GGJ_2021
             GameObject Mamdouh_Photo = GameObject.Instantiate(Oss_Photo);
             Mamdouh_Photo.GetComponent<SpriteRenderer>().Sprite.LoadTexture("Mamdouh");
             Mamdouh_Photo.Transform.Position += Vector2.UnitX * graphics.PreferredBackBufferWidth * 0.42f;
+
+            GameObject Actor = GameObject.Instantiate(Credits_Text);
+            Actor.Transform.Position = Credits_Text.Transform.Position + new Vector2(-graphics.PreferredBackBufferWidth * 0.02f, graphics.PreferredBackBufferHeight * 0.55f);
+            Actor.GetComponent<Text>().text = "Actor";
+
+            GameObject Hatem = GameObject.Instantiate(Oss);
+            Hatem.Transform.Position += new Vector2(graphics.PreferredBackBufferWidth * 0.2f, graphics.PreferredBackBufferHeight * 0.45f);
+            Hatem.GetComponent<Text>().text = "Ahmed Hatem";
+
+            GameObject Hatem_Photo = GameObject.Instantiate(Oss_Photo);
+            Hatem_Photo.GetComponent<SpriteRenderer>().Sprite.LoadTexture("HatemFace");
+            Hatem_Photo.Transform.Position += new Vector2(graphics.PreferredBackBufferWidth * 0.2f, graphics.PreferredBackBufferHeight * 0.13f);
         }
 
         private void MainMenu()

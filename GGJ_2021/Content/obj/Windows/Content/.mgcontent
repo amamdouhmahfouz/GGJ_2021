@@ -4,28 +4,32 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/Abdulrahman/Documents/jams/newBranches/main/GGJ_2021/GGJ_2021/Content/Book.png</File>
-    <File>C:/Users/Abdulrahman/Documents/jams/newBranches/main/GGJ_2021/GGJ_2021/Content/DecisionMaker_Hatem.png</File>
-    <File>C:/Users/Abdulrahman/Documents/jams/newBranches/main/GGJ_2021/GGJ_2021/Content/DST-909Dreams.mp3</File>
-    <File>C:/Users/Abdulrahman/Documents/jams/newBranches/main/GGJ_2021/GGJ_2021/Content/EntryScene.png</File>
-    <File>C:/Users/Abdulrahman/Documents/jams/newBranches/main/GGJ_2021/GGJ_2021/Content/erro (online-audio-converter.com).wav</File>
-    <File>C:/Users/Abdulrahman/Documents/jams/newBranches/main/GGJ_2021/GGJ_2021/Content/Font.spritefont</File>
-    <File>C:/Users/Abdulrahman/Documents/jams/newBranches/main/GGJ_2021/GGJ_2021/Content/Hatem_Celebrating-Sheet (1).png</File>
-    <File>C:/Users/Abdulrahman/Documents/jams/newBranches/main/GGJ_2021/GGJ_2021/Content/Hatem_Celebrating-Sheet.png</File>
-    <File>C:/Users/Abdulrahman/Documents/jams/newBranches/main/GGJ_2021/GGJ_2021/Content/Hatem_Interactions.png</File>
-    <File>C:/Users/Abdulrahman/Documents/jams/newBranches/main/GGJ_2021/GGJ_2021/Content/Mamdouh.png</File>
-    <File>C:/Users/Abdulrahman/Documents/jams/newBranches/main/GGJ_2021/GGJ_2021/Content/Manuscript.png</File>
-    <File>C:/Users/Abdulrahman/Documents/jams/newBranches/main/GGJ_2021/GGJ_2021/Content/Oss.png</File>
-    <File>C:/Users/Abdulrahman/Documents/jams/newBranches/main/GGJ_2021/GGJ_2021/Content/PopUpWindow.png</File>
-    <File>C:/Users/Abdulrahman/Documents/jams/newBranches/main/GGJ_2021/GGJ_2021/Content/Restart_Screen.png</File>
-    <File>C:/Users/Abdulrahman/Documents/jams/newBranches/main/GGJ_2021/GGJ_2021/Content/Screen.png</File>
-    <File>C:/Users/Abdulrahman/Documents/jams/newBranches/main/GGJ_2021/GGJ_2021/Content/Screen2.png</File>
-    <File>C:/Users/Abdulrahman/Documents/jams/newBranches/main/GGJ_2021/GGJ_2021/Content/SeeingReviews.png</File>
-    <File>C:/Users/Abdulrahman/Documents/jams/newBranches/main/GGJ_2021/GGJ_2021/Content/SteamPage.png</File>
-    <File>C:/Users/Abdulrahman/Documents/jams/newBranches/main/GGJ_2021/GGJ_2021/Content/SubmittingGame.png</File>
-    <File>C:/Users/Abdulrahman/Documents/jams/newBranches/main/GGJ_2021/GGJ_2021/Content/Voice_Line_1_ALT4 (online-audio-converter.com).wav</File>
-    <File>C:/Users/Abdulrahman/Documents/jams/newBranches/main/GGJ_2021/GGJ_2021/Content/Voice_Line_2_ALT (online-audio-converter.com).wav</File>
-    <File>C:/Users/Abdulrahman/Documents/jams/newBranches/main/GGJ_2021/GGJ_2021/Content/Voice_Line_4_ALT3 (online-audio-converter.com).wav</File>
+    <File>C:/GGJ_2021_LB/GGJ_2021/GGJ_2021/Content/Book.png</File>
+    <File>C:/GGJ_2021_LB/GGJ_2021/GGJ_2021/Content/DecisionMaker_Hatem.png</File>
+    <File>C:/GGJ_2021_LB/GGJ_2021/GGJ_2021/Content/DST-909Dreams.mp3</File>
+    <File>C:/GGJ_2021_LB/GGJ_2021/GGJ_2021/Content/EntryScene.png</File>
+    <File>C:/GGJ_2021_LB/GGJ_2021/GGJ_2021/Content/erro (online-audio-converter.com).wav</File>
+    <File>C:/GGJ_2021_LB/GGJ_2021/GGJ_2021/Content/Font.spritefont</File>
+    <File>C:/GGJ_2021_LB/GGJ_2021/GGJ_2021/Content/Hatem_Celebrating-Sheet (1).png</File>
+    <File>C:/GGJ_2021_LB/GGJ_2021/GGJ_2021/Content/Hatem_Celebrating-Sheet.png</File>
+    <File>C:/GGJ_2021_LB/GGJ_2021/GGJ_2021/Content/Hatem_Interactions.png</File>
+    <File>C:/GGJ_2021_LB/GGJ_2021/GGJ_2021/Content/HatemFace.png</File>
+    <File>C:/GGJ_2021_LB/GGJ_2021/GGJ_2021/Content/Mamdouh.png</File>
+    <File>C:/GGJ_2021_LB/GGJ_2021/GGJ_2021/Content/Manuscript.png</File>
+    <File>C:/GGJ_2021_LB/GGJ_2021/GGJ_2021/Content/Oss.png</File>
+    <File>C:/GGJ_2021_LB/GGJ_2021/GGJ_2021/Content/PopUpWindow.png</File>
+    <File>C:/GGJ_2021_LB/GGJ_2021/GGJ_2021/Content/Restart_Screen.png</File>
+    <File>C:/GGJ_2021_LB/GGJ_2021/GGJ_2021/Content/Screen.png</File>
+    <File>C:/GGJ_2021_LB/GGJ_2021/GGJ_2021/Content/Screen2.png</File>
+    <File>C:/GGJ_2021_LB/GGJ_2021/GGJ_2021/Content/SeeingReviews.png</File>
+    <File>C:/GGJ_2021_LB/GGJ_2021/GGJ_2021/Content/SteamPage.png</File>
+    <File>C:/GGJ_2021_LB/GGJ_2021/GGJ_2021/Content/SubmittingGame.png</File>
+    <File>C:/GGJ_2021_LB/GGJ_2021/GGJ_2021/Content/SubmittingGameV2.png</File>
+    <File>C:/GGJ_2021_LB/GGJ_2021/GGJ_2021/Content/Voice_Line_1_ALT4 (online-audio-converter.com).wav</File>
+    <File>C:/GGJ_2021_LB/GGJ_2021/GGJ_2021/Content/Voice_Line_2_ALT (online-audio-converter.com).wav</File>
+    <File>C:/GGJ_2021_LB/GGJ_2021/GGJ_2021/Content/Voice_Line_3_ALT (online-audio-converter.com).wav</File>
+    <File>C:/GGJ_2021_LB/GGJ_2021/GGJ_2021/Content/Voice_Line_4_ALT3 (online-audio-converter.com).wav</File>
+    <File>C:/GGJ_2021_LB/GGJ_2021/GGJ_2021/Content/Voice_Line_5 (online-audio-converter.com).wav</File>
   </SourceFiles>
   <DestFiles>
     <File xsi:nil="true" />
@@ -47,8 +51,12 @@
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File>VL1.wav</File>
     <File>VL2.wav</File>
+    <File>VL3.wav</File>
     <File>VL4.wav</File>
+    <File>VL5.wav</File>
   </DestFiles>
 </SourceFileCollection>

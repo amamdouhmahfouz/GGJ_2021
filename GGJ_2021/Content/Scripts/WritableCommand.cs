@@ -146,7 +146,7 @@ namespace GGJ_2021
                         }
                     }
 
-                    if (splitCommands2.Count == 21)
+                    if (splitCommands2.Count % 21 == 0)
                     {
                         textCommand = "";
                     }
